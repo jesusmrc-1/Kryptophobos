@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
+  m_Name: Note_01
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  NoteName: G. Sulli. 01
+  NoteText: " 01 - XX - 197X\n\r\n-The old receivers still work better than the new
+    equipment. \r\n\r\n-I like to think that as long as the radio is on, we are still
+    connected to the world. The \r\nlaboratory requested an increase in power this
+    week. They say it is due to \u2018natural \r\ninterference\u2019. Here, only
+    the cold feels natural"

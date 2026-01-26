@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17547a72ca7c18641ae86f43a61440bf, type: 3}
+  m_Name: FS_Indoor
+  m_EditorClassIdentifier: Assembly-CSharp::FootstepSet
+  clips:
+  - {fileID: 8300000, guid: 584afafab69d7494f9de902f9f99860a, type: 3}
+  - {fileID: 8300000, guid: ca06cf11efe110444a96b9302559fa62, type: 3}
+  - {fileID: 8300000, guid: 0c25ecf6e0fcec7458ccf2732d5aae1c, type: 3}
+  - {fileID: 8300000, guid: 5b0a877393054414e8c158292fcab882, type: 3}
+  volume: 1
+  pitchRange: {x: 0.95, y: 1.05}

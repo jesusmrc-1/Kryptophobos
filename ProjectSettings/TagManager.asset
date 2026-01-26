@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Door
+  - Key
+  - TEXT_Global
+  - Obstacle
+  - GearSocket
+  - CM_Camera
+  - Puzzle_Gears
+  - Big_Gear
+  - Medium_Gear
+  - Small_Gear
+  - Big_Gear_Rotating
+  - Flashlight
+  - Medium_Gear_Rotating
+  - Puzzle
+  - Small_Gear_Rotating
+  - UI_Exit
+  - UI_Start
+  - UI_BackToMainMenu
+  - UI_Load
+  - UI_Options
+  - Item
+  - TEXT_Diegetic
+  - CameraManager
+  - CANVAS_Diegetic
+  - CANVAS_NonDiegetic
+  - LG_PlayerInventory
+  - Note
+  - UI_Objectives
+  - Waypoint
+  - Collisionable
+  - GameEventsManager
+  - Enemy
+  - GameManager
+  - Reposition
+  - Fade
+  - UIManager
+  - VideoPlayer
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Pickable
+  - Water
+  - UI
+  - PlayerLayer
+  - Interactable
+  - Enemy
+  - IgnoreBakeNavMesh
+  - EnemyVision
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  m_RenderingLayers:
+  - Default

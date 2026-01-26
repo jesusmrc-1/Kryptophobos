@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
+  m_Name: Note_05
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  NoteName: Anonymous
+  NoteText: "If anyone hears this... Don't stay still. What came out of the ice is
+    not from this earth. I \r\ncan no longer distinguish the ground from them, the
+    light reveals them. The tower is not \r\nsafe. \r\n\r\nI'm turning off the radio.
+    Sullivan"

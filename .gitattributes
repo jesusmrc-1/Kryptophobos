@@ -1,0 +1,58 @@
+# =====================================================
+# UNITY PROJECT - SAFE & CLEAN .gitattributes
+# =====================================================
+
+# -----------------------------------------------------
+# TEXT FILES (Unity usa YAML → NO LFS)
+# -----------------------------------------------------
+*.cs            text eol=lf
+*.shader        text eol=lf
+*.cginc         text eol=lf
+*.txt           text eol=lf
+*.md            text eol=lf
+*.json          text eol=lf
+*.xml           text eol=lf
+*.yml           text eol=lf
+
+# Unity YAML files (MUY IMPORTANTE: NO LFS)
+*.unity         text eol=lf
+*.prefab        text eol=lf
+*.asset         text eol=lf
+*.mat           text eol=lf
+*.anim          text eol=lf
+*.controller    text eol=lf
+*.physicmaterial text eol=lf
+
+# Normalización general
+* text=auto
+
+# -----------------------------------------------------
+# GIT LFS (SOLO BINARIOS REALES Y PESADOS)
+# -----------------------------------------------------
+
+# 3D Models
+*.fbx   filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.obj   filter=lfs diff=lfs merge=lfs -text
+
+# Textures (solo las que suelen ser grandes)
+*.psd   filter=lfs diff=lfs merge=lfs -text
+*.tga   filter=lfs diff=lfs merge=lfs -text
+*.exr   filter=lfs diff=lfs merge=lfs -text
+
+# Audio
+*.wav   filter=lfs diff=lfs merge=lfs -text
+*.mp3   filter=lfs diff=lfs merge=lfs -text
+*.ogg   filter=lfs diff=lfs merge=lfs -text
+
+# Video
+*.mp4   filter=lfs diff=lfs merge=lfs -text
+*.mov   filter=lfs diff=lfs merge=lfs -text
+
+# Fonts
+*.ttf   filter=lfs diff=lfs merge=lfs -text
+*.otf   filter=lfs diff=lfs merge=lfs -text
+
+# Binary plugins / executables
+*.dll   filter=lfs diff=lfs merge=lfs -text
+*.exe   filter=lfs diff=lfs merge=lfs -text
