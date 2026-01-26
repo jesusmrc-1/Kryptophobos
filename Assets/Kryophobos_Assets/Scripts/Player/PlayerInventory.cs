@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject _flashlightGameObject;
     public Flashlight Flashlight;
     public List<ItemStack> Items = new List<ItemStack>();
+    public List<ItemData> Data = new List<ItemData>();
     public List<NoteData> Notes = new List<NoteData>();
 
     public bool HasFlashlight = false;
@@ -52,6 +53,9 @@ public class PlayerInventory : MonoBehaviour
 
         //Y nos deja crea la caja ya rellena en una sola línea:
         Items.Add(new ItemStack(newItem, newItem.Amount));
+        //ItemStack itemStack = Items.FindLast(i=> i.Item == newItem);
+        Data.Add(newItem);
+
 
         if (GameManager.Instance != null)
         {

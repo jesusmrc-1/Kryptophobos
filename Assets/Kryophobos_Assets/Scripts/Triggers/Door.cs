@@ -94,6 +94,8 @@ public class Door : TriggerBase
             GameManager.Instance.Doors.Add(this._ID);
         }
 
+        _player.PlayerHasRequiredItems = false;
+
         //Por ahora se destruye el trigger, si mas adelante hay puertas que puedas interactuar para cerrar ya se cambiara la forma de interactuar.
         Destroy(gameObject);
     }

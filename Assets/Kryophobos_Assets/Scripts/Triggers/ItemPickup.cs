@@ -29,7 +29,10 @@ public class ItemPickup : TriggerBase
 
     public void PickupItem()
     {
-        if (_itemData != null) _playerInventory.AddItem(_itemData);
+        if (_itemData != null)
+        {
+            _playerInventory.AddItem(_itemData);
+        }
         else if (_itemData == null) Debug.LogError("ERROR: El trigger no tiene referenciado un item (Scriptable Object).");
 
         Destroy(gameObject);
