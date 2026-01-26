@@ -56,6 +56,13 @@ public class Flashlight : MonoBehaviour
 
     [SerializeField] GameObject _flash;
 
+
+    private void Awake()
+    {
+        LayerMask ignoredMasks = IgnorePlayer | IgnoreEnemyVision | IgnoreRaycast | IgnoreInteractable;
+        _ignoreLayerMasks = ~ignoredMasks;
+    }
+
     void Start()
     {
         //charge.Enable();
@@ -224,6 +231,7 @@ public class Flashlight : MonoBehaviour
     {
         _isFlashing = true;
         _animatorCharacter.SetTrigger("FlashStun");
+        FlashTargets();
 
         float timer = 0f;
 
@@ -239,7 +247,7 @@ public class Flashlight : MonoBehaviour
             yield return null;
         }
 
-        _flash.SetActive(true);
+        //_flash.SetActive(true);
 
         timer = 0f;
 
@@ -255,7 +263,7 @@ public class Flashlight : MonoBehaviour
             yield return null;
         }
 
-        _flash.SetActive(false);
+        //_flash.SetActive(false);
 
         //Reiniciamos los valores de la luz y la bateria.
         _batteryCharge = 0f;
@@ -274,4 +282,71 @@ public class Flashlight : MonoBehaviour
     {
         return _isFlashing;
     }
+
+    #region Flash Near Targets
+    [SerializeField] private GameObject _area;
+    [SerializeField] private GameObject _rayOrigin;
+    [SerializeField] private float _flashRadius;
+    [SerializeField] float _blindTime;
+
+    [SerializeField] private LayerMask IgnorePlayer;
+    [SerializeField] private LayerMask IgnoreEnemyVision;
+    [SerializeField] private LayerMask IgnoreRaycast;
+    [SerializeField] private LayerMask IgnoreInteractable;
+    private int _ignoreLayerMasks;
+    [SerializeField] private float _xOffset;
+
+    private void FlashTargets()
+    {
+        Collider[] hits = Physics.OverlapSphere(
+        _area.transform.position,
+        _flashRadius,
+        LayerMask.GetMask("Enemy")
+        );
+
+        foreach (var hit in hits)
+        {
+            Vector3 rayDirection = hit.transform.position - _rayOrigin.transform.position;
+            rayDirection.x += _xOffset;
+
+            float rayDistance = rayDirection.magnitude;
+            rayDirection.Normalize();
+
+            Debug.DrawRay(_rayOrigin.transform.position, rayDirection * rayDistance, Color.red, 5f);
+
+            if (Physics.Raycast(
+                _rayOrigin.transform.position,
+                rayDirection,
+                out RaycastHit hitInfo,
+                rayDistance,
+                _ignoreLayerMasks,
+                QueryTriggerInteraction.Ignore
+            ))
+            {
+                if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    Debug.LogWarning("Enemigo flasheado");
+                    Enemy enemy = hit.GetComponent<Enemy>();
+                    if (enemy != null)
+                    {
+                        if (!enemy.IsEnemyFlashed)
+                        {
+                            enemy.IsEnemyFlashed = true;
+                            enemy.Attacking = false;
+                            enemy.HoldingPosition = false;
+                            enemy.IsPlayerInVisionRange = false;
+                            enemy.PlayerSpotted = false;
+                            enemy.PreparingAttack = false;
+                            enemy.FollowingTarget = false;
+                            enemy.StartSearching = false;
+                            enemy.Animator.SetBool("IsTargetSpotted", true);
+                            enemy.TargetLastKnownPosition = _player.gameObject.transform.position;
+                            enemy.StartCoroutine(enemy.Blind(_blindTime));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #endregion
 }

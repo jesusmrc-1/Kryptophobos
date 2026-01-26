@@ -55,6 +55,7 @@ public class EnemyRepositionState : EnemyState
 
         enemy.GPS.speed = 2;
         enemy.Animator.SetFloat("AnimSpeed", 1.5f);
+        _timer = 0f;
     }
 
     public override void FrameUpdate()
@@ -74,7 +75,7 @@ public class EnemyRepositionState : EnemyState
 
         if (_timer >= enemy.RepositionTime)
         {
-            _timer = 0;
+            _timer = 0f;
             if (!enemy.AlwaysChase) enemy.MovementStateMachine.ChangeState(enemy.SearchingState);
             else if (enemy.AlwaysChase) enemy.MovementStateMachine.ChangeState(enemy.FollowTargetState);
         }

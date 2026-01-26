@@ -48,7 +48,7 @@ public class EnemyPreparingAttackState : EnemyState
         }
 
         //Comprobar si el jugador sigue en la linea de vision
-
+        /*
         if (enemy.IsPlayerInVisionRange)
         {
             Vector3 lookingDirection = enemy.Player.transform.position - enemy.transform.position;
@@ -77,6 +77,33 @@ public class EnemyPreparingAttackState : EnemyState
             }
         }
         else enemy.PlayerSpotted = false;
+        */
+
+        Vector3 lookingDirection = enemy.Player.transform.position - enemy.transform.position;
+        lookingDirection.y += enemy.YOffset;
+
+        //Debugging Ray
+        Color color = new Color(1, 0, 0, 1);
+        Debug.DrawRay(enemy.transform.position, lookingDirection, color);
+
+        if (Physics.Raycast(enemy.transform.position, lookingDirection, out RaycastHit hitInfo, Mathf.Infinity, enemy.IgnoredLayers))
+        {
+
+            //Si el collider es el del jugador..
+            if (hitInfo.collider.gameObject.CompareTag("Player"))
+            {
+                //Se detecta al jugador y mientras sea visible, timer sera siempre 0 hasta perder de vista al jugador.
+                enemy.PlayerSpotted = true;
+            }
+            else if (!hitInfo.collider.gameObject.CompareTag("Player"))
+            {
+                _timer = 0;
+                enemy.PreparingAttack = false;
+                enemy.PlayerSpotted = false;
+                enemy.MovementStateMachine.ChangeState(enemy.FollowTargetState);
+                enemy.ActionStateMachine.ChangeState(enemy.WatchingState);
+            }
+        }
     }
 
     public override void PhysicsUpdate()

@@ -17,6 +17,7 @@ public class EnemyFlashedState : EnemyState
     {
         base.EnterState();
         enemy.Animator.SetTrigger("FlashStun");
+        enemy.GPS.isStopped = true;
 
     }
 

@@ -17,9 +17,11 @@ public class DetectNearbyTargets : MonoBehaviour
             //Se preparara para atacar
             if (_enemy.ActionStateMachine.CurrentEnemyState != _enemy.PreparingAttackState &&
                 _enemy.ActionStateMachine.CurrentEnemyState != _enemy.AttackingState &&
-                _enemy.MovementStateMachine.CurrentEnemyState != _enemy.RepositionState)
+                _enemy.MovementStateMachine.CurrentEnemyState != _enemy.RepositionState &&
+                !_enemy.IsEnemyFlashed)
             {
                 _enemy.PreparingAttack = true;
+                _enemy.IsPlayerInVisionRange = true;
                 _enemy.MovementStateMachine.ChangeState(_enemy.IdleState);
                 _enemy.ActionStateMachine.ChangeState(_enemy.PreparingAttackState);
             }

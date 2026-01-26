@@ -74,6 +74,8 @@ public class Enemy : MonoBehaviour
     public float FollowTime;
     public float SearchingTime;
 
+    public bool IsEnemyFlashed;
+
     public List<GameObject> RoomWaypoints = new List<GameObject>();
 
     public bool Attacking;
@@ -315,19 +317,34 @@ public class Enemy : MonoBehaviour
     #region Blinded Behaviour
     public IEnumerator Blind(float blindTime)
     {
+        Debug.Log("ENEMY GOT BLINDED");
         //Mantenemos el tiempo de reposición original en 'repositionTime'.
         float repositionTime = RepositionTime;
 
         //Aumentamos el tiempo de reposición al ser cegado el enemigo.
         RepositionTime = blindTime;
 
+
+        PreparingAttack = false;
+        PlayerSpotted = false;
         MovementStateMachine.ChangeState(FlashedState);
         ActionStateMachine.ChangeState(NonActionState);
 
+        float _timer = 0f;
+
+            /*
         while (MovementStateMachine.CurrentEnemyState == FlashedState || MovementStateMachine.CurrentEnemyState == RepositionState)
         {
             yield return null;
         }
+            */
+
+        while (_timer < RepositionTime)
+            {
+
+            _timer += Time.deltaTime;
+            yield return null;
+            }
 
         //yield return new WaitForSeconds(blindTime);
 
@@ -335,6 +352,7 @@ public class Enemy : MonoBehaviour
 
         //Volvemos a tomar el valor original.
         RepositionTime = repositionTime;
+        IsEnemyFlashed = false;
     }
     #endregion
 

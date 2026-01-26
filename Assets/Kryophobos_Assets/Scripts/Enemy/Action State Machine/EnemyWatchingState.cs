@@ -28,7 +28,7 @@ public class EnemyWatchingState : EnemyState
         base.FrameUpdate();
 
         //Si el jugador se encuentra en el rango de visión del enemigo, comprobar si hay algun obstaculo que tape la vision con el jugador.
-        if (enemy.IsPlayerInVisionRange)
+        if (enemy.IsPlayerInVisionRange && !enemy.IsEnemyFlashed)
         {
             //Calcular la dirección entre el enemigo y el jugador
             Vector3 lookingDirection = enemy.Player.transform.position - enemy.transform.position;
