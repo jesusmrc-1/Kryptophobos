@@ -399,7 +399,18 @@ public class PCB : PuzzleBase
         foreach (var obj in _puzzleObjects) if (obj != null) obj.SetActive(true);
 
         //Cada objeto instanciado se elimina
-        foreach (var obj in _instantiatedObjects) if (obj != null) Destroy(obj);
+        foreach (var obj in _instantiatedObjects)
+        {
+            if (obj != null)
+            {
+                //Pentan las resistencias
+                MeshRenderer meshRenderer = obj.GetComponent<MeshRenderer>();
+                if (meshRenderer != null) meshRenderer.enabled = false;
+
+                DestroyResistor destroyResistor = obj.GetComponent<DestroyResistor>();
+                if (destroyResistor != null) destroyResistor.DestroyResistorComponent();
+            }
+        }
         _instantiatedObjects.Clear();
 
         //El estado de cada socket se reinicia

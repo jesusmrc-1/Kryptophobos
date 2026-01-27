@@ -340,6 +340,7 @@ public class Flashlight : MonoBehaviour
                             enemy.FollowingTarget = false;
                             enemy.StartSearching = false;
                             enemy.Animator.SetBool("IsTargetSpotted", true);
+                            enemy.Animator.SetBool("EndSearching", false);
                             enemy.TargetLastKnownPosition = _player.gameObject.transform.position;
                             enemy.StartCoroutine(enemy.Blind(_blindTime));
                         }
