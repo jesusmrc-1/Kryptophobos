@@ -80,3 +80,5 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - "Recibir Iluminaci\xF3n Exlusiva"
+  - Recibir Sombras

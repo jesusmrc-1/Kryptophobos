@@ -30,7 +30,7 @@ MonoBehaviour:
         m_Id: With3Levels
     supportVolumetrics: 1
     supportVolumetricClouds: 0
-    supportLightLayers: 0
+    supportLightLayers: 1
     renderingLayerMaskBuffer: 0
     supportWater: 0
     waterSimulationResolution: 128
@@ -50,10 +50,10 @@ MonoBehaviour:
     supportTransparentBackface: 1
     supportTransparentDepthPrepass: 1
     supportTransparentDepthPostpass: 1
-    colorBufferFormat: 74
+    colorBufferFormat: 48
     supportCustomPass: 1
     supportVariableRateShading: 1
-    customBufferFormat: 12
+    customBufferFormat: 48
     supportedLitShaderMode: 2
     planarReflectionResolution:
       m_Values: 000100000004000000080000
@@ -90,7 +90,7 @@ MonoBehaviour:
     supportedRayTracingMode: 3
     lightLoopSettings:
       cookieAtlasSize: 2048
-      cookieFormat: 74
+      cookieFormat: 48
       cookieAtlasLastValidMip: 0
       cookieTexArraySize: 1
       planarReflectionAtlasSize: 1024
@@ -98,7 +98,7 @@ MonoBehaviour:
       reflectionCubemapSize: 256
       maxEnvLightsOnScreen: 64
       reflectionCacheCompressed: 0
-      reflectionProbeFormat: 74
+      reflectionProbeFormat: 48
       reflectionProbeTexCacheSize: 1073750016
       reflectionProbeTexLastValidCubeMip: 3
       reflectionProbeTexLastValidPlanarMip: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
       perChannelMask: 0
     postProcessSettings:
       m_LutSize: 32
-      lutFormat: 48
-      bufferFormat: 74
+      lutFormat: 52
+      bufferFormat: 52
     dynamicResolutionSettings:
       enabled: 0
       useMipBias: 0
