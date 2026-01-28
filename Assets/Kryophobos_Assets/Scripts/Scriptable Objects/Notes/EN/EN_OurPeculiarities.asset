@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: Note_04
+  m_Name: EN_OurPeculiarities
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
-  NoteName: G. Sulli. 04
-  NoteText: "15 - XX - 197X\n\n-These aren't interferences... Something is damaging
-    the cables. The cuts are clean and \nasymmetrical. It doesn't seem to be the
-    work of any human weapon. \n\nViiktor has requested spare parts, but they're
-    not responding, and they're not receiving\neither..."
+  NoteName: Our peculiarities
+  NoteText: "Mary likes to sing when she thinks no one is listening. Sullivan never
+    turns off the radio. \r\nViktor sleeps with the light on. And I count the days."

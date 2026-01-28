@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: CalculateResistors
+  m_Name: EN_Anonymous
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
-  NoteName: 
-  NoteText: 
+  NoteName: Anonymous
+  NoteText: "If anyone hears this... Don't stay still. What came out of the ice is
+    not from this earth. I \r\ncan no longer distinguish the ground from them, the
+    light reveals them. The tower is not \r\nsafe. \r\n\r\nI'm turning off the radio.
+    Sullivan"

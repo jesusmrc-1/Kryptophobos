@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: Note_06
+  m_Name: EN_UnsentLetter
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
   NoteName: Unsent letter
-  NoteText: "Mum, everything here is white and all you can hear is the icy wind blowing
-    through the \r\nwindows. It's unlike anywhere else, there's no life or colour,
-    and when it storms, the \r\nmountains fade into a blurry landscape. \r\n\r\nI
+  NoteText: "\n\nMum, everything here is white and all you can hear is the icy wind
+    blowing through the \r\nwindows. It's unlike anywhere else, there's no life or
+    colour, and when it storms, the \r\nmountains fade into a blurry landscape. \r\n\r\nI
     said I'd come for a year, but I don't know if I can last that long. Sullivan
     thinks I'm \r\nexaggerating, but sometimes I feel like this place crushes you
     from the inside. \r\nWhen I come back, I promise I won't complain about the heat

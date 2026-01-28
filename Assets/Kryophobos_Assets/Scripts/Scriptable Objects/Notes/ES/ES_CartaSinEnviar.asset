@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
+  m_Name: ES_CartaSinEnviar
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  NoteName: Carta sin enviar
+  NoteText: "Mam\xE1, aqu\xED todo es blanco y solo se oye el viento helado pasar
+    por las ventanas. No se parece a ning\xFAn otro sitio, no hay vida ni color,
+    y con las tormentas las monta\xF1as se desvanecen en un borroso paisaje.\n\r\nDije
+    que ven\xEDa por un a\xF1o, pero no s\xE9 si aguante tanto. Sullivan cree que
+    exagero, pero a veces siento que este lugar te aplasta por dentro.\n\r\nCuando
+    vuelva, prometo no volver a quejarme del calor, os echo de menos.\n\r\n-Tu hija,
+    Mary"

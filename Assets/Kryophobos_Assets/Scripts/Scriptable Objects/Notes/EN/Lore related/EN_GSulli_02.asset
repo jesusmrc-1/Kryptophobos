@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: Note_02
+  m_Name: EN_GSulli_02
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
   NoteName: G. Sulli. 02
   NoteText: "03 - XX -197X\n\n-Viiktor says the lab is digging deeper, that they

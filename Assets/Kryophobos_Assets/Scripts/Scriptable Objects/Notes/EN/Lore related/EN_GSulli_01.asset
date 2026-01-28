@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: Note_01
+  m_Name: EN_GSulli_01
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
   NoteName: G. Sulli. 01
-  NoteText: " 01 - XX - 197X\n\r\n-The old receivers still work better than the new
-    equipment. \r\n\r\n-I like to think that as long as the radio is on, we are still
-    connected to the world. The \r\nlaboratory requested an increase in power this
-    week. They say it is due to \u2018natural \r\ninterference\u2019. Here, only
-    the cold feels natural"
+  NoteText: "01 - XX - 197X\n\r\n-Los antiguos receptores siguen funcionando mejor
+    que los equipos nuevos.\n\r\n-Me gusta pensar que mientras la radio est\xE9 encendida,
+    seguimos conectados con el mundo. El laboratorio pidi\xF3 aumentar la potencia
+    esta semana. Dicen que es por \u201Cinterferencias naturales\u201D. Aqu\xED solo
+    el fr\xEDo se siente natural..."

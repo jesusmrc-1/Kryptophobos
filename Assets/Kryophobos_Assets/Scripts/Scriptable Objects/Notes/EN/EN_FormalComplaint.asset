@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: Note_07
+  m_Name: EN_FormalComplaint
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
   NoteName: Formal complaint
   NoteText: "I would like to remind you all, that part of your responsibilities is
