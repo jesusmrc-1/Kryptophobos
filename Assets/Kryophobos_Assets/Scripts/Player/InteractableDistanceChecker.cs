@@ -46,9 +46,11 @@ public class InteractableDistanceChecker : MonoBehaviour
         if (_nearbyTriggersList.Count == 1)
         {
             ClosestTrigger = _nearbyTriggersList[0]; //COMPROBAR PARA QUE ES ESTA LINEA YA QUE PARECE NO SER NECESARIA
-            OnPlayerNearTrigger?.Invoke(ClosestTrigger);
-
-            CheckWhatIsClosestToPlayer();
+            if (ClosestTrigger != null)
+            {
+                OnPlayerNearTrigger?.Invoke(ClosestTrigger);
+                CheckWhatIsClosestToPlayer();
+            }
         }
 
         //Si hay almenos dos triggers cercanos, se hace la comprobación.
@@ -72,9 +74,11 @@ public class InteractableDistanceChecker : MonoBehaviour
             }
             //La función de UI Manager que esta suscrita se ejecutara pasandole un collider como parametro, se usara para posicionar el texto
             //SI ES NECESARIO, VER SI SE PUEDE PASAR OTRO PARAMETRO CAMBIANDO LA ACCION Y ASI PODER CONFIGURAR EL OFFSET EN CADA OBJETO DETECTADO
-            OnPlayerNearTrigger?.Invoke(ClosestTrigger);
-
-            CheckWhatIsClosestToPlayer();
+            if (ClosestTrigger != null)
+            {
+                OnPlayerNearTrigger?.Invoke(ClosestTrigger);
+                CheckWhatIsClosestToPlayer();
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

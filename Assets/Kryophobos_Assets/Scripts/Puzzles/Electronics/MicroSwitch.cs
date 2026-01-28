@@ -85,6 +85,7 @@ public class MicroSwitch : MonoBehaviour
                 {
                     //TRUE =  LUZ VERDE ANIMADA, FUNCIONA.
                     if (_greenLEDAnimator != null) _greenLEDAnimator.SetTrigger("On");
+                    _puzzle.DisableInputs();
                     StartCoroutine(Delay());
                 }
 

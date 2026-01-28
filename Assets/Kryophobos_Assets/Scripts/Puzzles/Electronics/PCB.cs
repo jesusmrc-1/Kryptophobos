@@ -441,4 +441,10 @@ public class PCB : PuzzleBase
             _gameEvents.PuzzleSolved(this);
         }
     }
+
+    public void DisableInputs()
+    {
+        _select.Disable();
+        _cancelSelection.Disable();
+    }
 }
