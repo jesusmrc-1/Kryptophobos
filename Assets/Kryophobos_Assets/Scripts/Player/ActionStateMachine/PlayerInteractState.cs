@@ -63,13 +63,18 @@ public class PlayerInteractState : PlayerState
                 }
             }
 
-                //
-                if (!player.IsPlayerDoingPuzzle) player.ActionStateMachine.ChangeState(player.NonActionState);
+            //Si es un boton, interactuar con el.
+            else if (player.IsPlayerNearButton)
+            {
+                EndingButton endingButton = player.IDC.ClosestTrigger.GetComponent<EndingButton>();
+                if (endingButton != null)
+                {
+                    endingButton.OpenDoor(player);
+                }
+            }
+
+            if (!player.IsPlayerDoingPuzzle) player.ActionStateMachine.ChangeState(player.NonActionState);
         }
-
-        //
-
-
     }
 
     public override void PhysicsUpdate()

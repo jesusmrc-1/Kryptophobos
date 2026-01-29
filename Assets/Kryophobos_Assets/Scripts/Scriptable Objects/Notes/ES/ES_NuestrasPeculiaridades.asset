@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: ES_
+  m_Name: ES_NuestrasPeculiaridades
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
-  NoteName: 
-  NoteText: 
+  NoteName: Nuestras peculiaridades
+  NoteText: "Mary canta cuando cree que nadie la escucha.\n\nSullivan nunca deja
+    la radio apagada.\n\r\nViiktor duerme con la luz encendida.\n\nYo cuento los
+    d\xEDas."

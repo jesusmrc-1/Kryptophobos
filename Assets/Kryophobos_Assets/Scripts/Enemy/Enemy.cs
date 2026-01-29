@@ -46,6 +46,8 @@ Para depuración de IA compleja, es mejor usar paneles UI o Debug.Log en lugar d
 
 public class Enemy : MonoBehaviour
 {
+    private EventsManager eventsManager;
+
     public string CurrentMovementState;
     public string CurrentActionState;
 

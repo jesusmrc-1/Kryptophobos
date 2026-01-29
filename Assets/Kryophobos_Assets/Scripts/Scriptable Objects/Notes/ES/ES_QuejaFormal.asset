@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
+  m_Name: ES_QuejaFormal
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  NoteName: Queja formal
+  NoteText: "Os recuerdo que parte de vuestras responsabilidades es que se respeten
+    los horarios de turno. Nada de dormir en la sala de recepci\xF3n mientras estamos
+    haciendo ajustes en la sala de radio.\n\r\nEl consumo excesivo de caf\xE9 y cigarrillos
+    en la sala de transmisiones est\xE1 afectando a los equipos, queda prohibido
+    traer comida, bebida y fumar sin un cenicero al lado.\n\r\nLuke deja de trabajar
+    de noche sin autorizaci\xF3n. Esta no es una estaci\xF3n experimental, es una
+    torre de comunicaciones."

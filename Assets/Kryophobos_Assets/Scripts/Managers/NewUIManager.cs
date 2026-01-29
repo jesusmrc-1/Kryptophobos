@@ -207,43 +207,67 @@ public class NewUIManager : MonoBehaviour
         {
             //TMP toma los valores de ItemPickup heredados de la clase abstracta TextSettings.
             ItemPickup itemPickup = c.GetComponentInParent<ItemPickup>();
-            DiegeticTMP.text = itemPickup.DiegeticText;
-            DiegeticTMP.fontSize = itemPickup.DiegeticFontSize;
-            DiegeticTMP.transform.SetParent(c.transform.parent.transform);
-            DiegeticTMP.transform.localPosition = itemPickup.DiegeticTextPosition.transform.localPosition;
-            DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            if (itemPickup != null)
+            {
+                DiegeticTMP.text = itemPickup.DiegeticText;
+                DiegeticTMP.fontSize = itemPickup.DiegeticFontSize;
+                DiegeticTMP.transform.SetParent(c.transform.parent.transform);
+                DiegeticTMP.transform.localPosition = itemPickup.DiegeticTextPosition.transform.localPosition;
+                DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            }
         }
         else if (c.tag == "Note")
         {
             //TMP toma los valores de Door heredados de la clase abstracta TextSettings. 
             NotePickup notePickup = c.GetComponentInParent<NotePickup>();
-            DiegeticTMP.text = notePickup.DiegeticText;
-            DiegeticTMP.fontSize = notePickup.DiegeticFontSize;
-            DiegeticTMP.transform.SetParent(c.transform.parent.transform);
-            DiegeticTMP.transform.localPosition = notePickup.DiegeticTextPosition.transform.localPosition;
-            DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            if (notePickup != null) 
+            {
+                DiegeticTMP.text = notePickup.DiegeticText;
+                DiegeticTMP.fontSize = notePickup.DiegeticFontSize;
+                DiegeticTMP.transform.SetParent(c.transform.parent.transform);
+                DiegeticTMP.transform.localPosition = notePickup.DiegeticTextPosition.transform.localPosition;
+                DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            }
         }
         else if (c.tag == "Door")
         {
             //TMP toma los valores de Door heredados de la clase abstracta TextSettings. 
             Door door = c.GetComponentInParent<Door>();
-            DiegeticTMP.text = door.DiegeticText;
-            DiegeticTMP.fontSize = door.DiegeticFontSize;
-            DiegeticTMP.transform.SetParent(c.transform.parent.transform);
-            DiegeticTMP.transform.localPosition = door.DiegeticTextPosition.transform.localPosition;
-            DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            if (door != null)
+            {
+                DiegeticTMP.text = door.DiegeticText;
+                DiegeticTMP.fontSize = door.DiegeticFontSize;
+                DiegeticTMP.transform.SetParent(c.transform.parent.transform);
+                DiegeticTMP.transform.localPosition = door.DiegeticTextPosition.transform.localPosition;
+                DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            }
         }
         else if (c.tag == "Puzzle")
         {
             //TMP toma los valores de Door heredados de la clase abstracta TextSettings. 
             Puzzle puzzle = c.GetComponentInParent<Puzzle>();
-            DiegeticTMP.text = puzzle.DiegeticText;
-            DiegeticTMP.fontSize = puzzle.DiegeticFontSize;
-            DiegeticTMP.transform.SetParent(c.transform.parent.transform);
-            DiegeticTMP.transform.localPosition = puzzle.DiegeticTextPosition.transform.localPosition;
-            DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            if (puzzle != null)
+            {
+                DiegeticTMP.text = puzzle.DiegeticText;
+                DiegeticTMP.fontSize = puzzle.DiegeticFontSize;
+                DiegeticTMP.transform.SetParent(c.transform.parent.transform);
+                DiegeticTMP.transform.localPosition = puzzle.DiegeticTextPosition.transform.localPosition;
+                DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            }
         }
-    
+        else if (c.tag == "Button")
+        {
+            EndingButton endingButton = c.GetComponentInParent<EndingButton>();
+            if (endingButton != null)
+            {
+                DiegeticTMP.text = endingButton.DiegeticText;
+                DiegeticTMP.fontSize = endingButton.DiegeticFontSize;
+                DiegeticTMP.transform.SetParent(c.transform);
+                DiegeticTMP.transform.localPosition = endingButton.DiegeticTextPosition.transform.localPosition;
+                DiegeticTMP.transform.SetParent(DiegeticCanvas.transform);
+            }
+        }
+            
         DiegeticText diegeticText = DiegeticTMP.gameObject.GetComponent<DiegeticText>();
         //diegeticText.StopAllCoroutines();
         diegeticText.CallCoroutine("ShowText");
