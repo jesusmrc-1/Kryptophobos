@@ -129,6 +129,9 @@ public class InteractableDistanceChecker : MonoBehaviour
         if (ClosestTrigger.gameObject.tag == "Puzzle") _player.IsPlayerNearPuzzle = true;
         else _player.IsPlayerNearPuzzle = false;
 
+        if (ClosestTrigger.gameObject.tag == "Button") _player.IsPlayerNearButton = true;
+        else _player.IsPlayerNearButton = false;
+
 
     }
 
@@ -147,5 +150,12 @@ public class InteractableDistanceChecker : MonoBehaviour
     {
         NotePickup notePickup = ClosestTrigger.GetComponentInParent<NotePickup>();
         if (notePickup != null) notePickup.PickupNote();
+    }
+
+    public void ClearColliderList()
+    {
+        _player.IsPlayerNearButton = false;
+        _nearbyTriggersList.Clear();
+        ClosestTrigger = null;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -43,6 +44,10 @@ public class EventsManager : MonoBehaviour
 
     [SerializeField] private GameObject _triggerEnemySpawner;
 
+    [SerializeField] private GameObject _triggerEnemyFirstEncounter;
+    [SerializeField] private GameObject _triggerEndingFirstLevel;
+    [SerializeField] private BoxCollider _triggerEndingButton;
+
     [SerializeField] private float _fadeTime;
     //Trigger cinematica
 
@@ -82,6 +87,7 @@ public class EventsManager : MonoBehaviour
                 _triggerPuzzleElectronics.Disable();
                 _slidingDoorServerRoom.UnlockDoor();
                 Destroy(_serverRoomDoorFloatingText);
+                _triggerEnemyFirstEncounter.SetActive(true);
                 break;
             case GearMachine:
                 //Cinematica, borrar trigger puzzle habilitar booleana interna.
@@ -90,6 +96,8 @@ public class EventsManager : MonoBehaviour
                 _triggerPuzzleGears.Invoke("RemoveInventoryItem", 2f);
                 //_slidingDoorEntranceRoom.UnlockDoor();
                 _triggerEnemySpawner.SetActive(true);
+                _triggerEndingFirstLevel.SetActive(true);
+                _triggerEndingButton.enabled = true;
                 break;
         }
     }

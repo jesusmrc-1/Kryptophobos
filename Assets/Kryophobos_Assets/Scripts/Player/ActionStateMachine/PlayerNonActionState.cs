@@ -36,7 +36,7 @@ public class PlayerNonActionState : PlayerState
         if (!player.inventory.Flashlight.HasLanternFullyCharged())
         {
             //Si el jugador trata de coger un objeto, cambiamos al estado PlayerPickupState
-            if (player.Interact.triggered && (player.IsPlayerNearItem || player.IsPlayerNearNote)) player.ActionStateMachine.ChangeState(player.InteractState);
+            if (player.Interact.triggered && (player.IsPlayerNearItem || player.IsPlayerNearNote || player.IsPlayerNearButton)) player.ActionStateMachine.ChangeState(player.InteractState);
 
             //No dejar interactuar si no se tienen los objetos necesarios
             if (player.Interact.triggered && (player.IsPlayerNearPuzzle || player.IsPlayerNearDoor) && player.PlayerHasRequiredItems) player.ActionStateMachine.ChangeState(player.InteractState);

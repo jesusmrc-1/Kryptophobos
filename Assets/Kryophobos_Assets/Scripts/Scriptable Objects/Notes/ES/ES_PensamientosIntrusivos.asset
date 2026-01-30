@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: ES_Note_ 6
+  m_Name: ES_PensamientosIntrusivos
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
-  NoteName: 
-  NoteText: 
+  NoteName: Pensamientos intrusivos
+  NoteText: "No es f\xE1cil estar al mando de personas que no quieren estar aqu\xED.
+    Si fuera por m\xED, la torre estar\xEDa vac\xEDa y funcionando sola. Pero las
+    m\xE1quinas a\xFAn necesitan manos humanas\u2026 y errores humanos."

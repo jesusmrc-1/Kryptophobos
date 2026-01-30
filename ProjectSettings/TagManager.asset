@@ -41,6 +41,7 @@ TagManager:
   - Fade
   - UIManager
   - VideoPlayer
+  - Button
   layers:
   - Default
   - TransparentFX

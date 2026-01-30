@@ -34,6 +34,7 @@ public class Player : MonoBehaviour, IDamageable
     public bool IsPlayerNearNote;
     public bool IsPlayerNearDoor;
     public bool IsPlayerNearPuzzle;
+    public bool IsPlayerNearButton;
     public bool IsPlayerInteracting;
     public bool IsPlayerDoingPuzzle;
     public bool PlayerHasRequiredItems;
@@ -51,6 +52,8 @@ public class Player : MonoBehaviour, IDamageable
 
     public Rigidbody RB { get; set; }
     public Animator Animator { get; set; }
+
+    public CapsuleCollider CapsuleCollider { get; set; }
 
     #region Finite State Machines
     public PlayerStateMachine MovementStateMachine { get; set; }
@@ -73,6 +76,7 @@ public class Player : MonoBehaviour, IDamageable
     private void Awake()
     {
         this.PlayerFootsteps = GetComponent<PlayerFootsteps>();
+        CapsuleCollider = GetComponent<CapsuleCollider>();
 
         //FSM
         MovementStateMachine = new PlayerStateMachine();
@@ -138,6 +142,7 @@ public class Player : MonoBehaviour, IDamageable
     #region Damage
     public void Damage(float damageAmount)
     {
+        if (GodMode) return;
         Debug.Log("Damage method from player");
 
         float newHealth = CurrentHealth - damageAmount;
@@ -190,6 +195,20 @@ public class Player : MonoBehaviour, IDamageable
     }
 
     #endregion
+
+    public void EnableGodMode()
+    {
+        GodMode = true;
+        RB.useGravity = false;
+        CapsuleCollider.enabled = false;
+    }
+
+    public void DisableGodMode()
+    {
+        GodMode = false;
+        CapsuleCollider.enabled = true;
+        RB.useGravity = true;
+    }
 
     public void DisableInputs()
     {

@@ -1,9 +1,12 @@
+using Unity.Loading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Video;
 
 public class PlayCutscene : MonoBehaviour
 {
+    [SerializeField] private string _ID;
+
     private PlayVideo _playVideo;
     [SerializeField] private VideoClip _clip;
     [SerializeField] private GameObject _playerFinalPosition;
@@ -12,6 +15,8 @@ public class PlayCutscene : MonoBehaviour
     private void Start()
     {
         _playVideo = GameObject.FindGameObjectWithTag("VideoPlayer").GetComponent<PlayVideo>();
+
+        LoadStatus();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,7 +29,18 @@ public class PlayCutscene : MonoBehaviour
                 other.gameObject.transform.position = _playerFinalPosition.transform.position;
                 other.gameObject.transform.rotation = _playerFinalPosition.transform.rotation;
             }
-            other.gameObject.transform.position = _playerFinalPosition.transform.position; 
+            other.gameObject.transform.position = _playerFinalPosition.transform.position;
+            GameManager.Instance.CutsceneTriggers.Add(_ID);
+            Destroy(gameObject);
+        }
+    }
+
+    private void LoadStatus()
+    {
+        string _ID = GameManager.Instance.CutsceneTriggers.Find(_ID => _ID == this._ID);
+
+        if (_ID == this._ID)
+        {
             Destroy(gameObject);
         }
     }

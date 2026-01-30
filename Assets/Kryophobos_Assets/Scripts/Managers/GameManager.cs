@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public List<string> Puzzles { get; private set; } = new List<string>();
     public List<string> NewObjectiveTriggers { get; private set; } = new List<string>();
     public List<string> CheckpointTriggers { get; private set; } = new List<string>();
+    public List<string> CutsceneTriggers { get; private set; } = new List<string>();
+    public List<string> VFX { get; private set; } = new List<string>();
     public bool PlayerHasFlashlight;
     private void Awake()
     {

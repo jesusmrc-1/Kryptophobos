@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
-  m_Name: ES_Note_ 5
+  m_Name: ES_NotaParaSullivan
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
-  NoteName: 
-  NoteText: 
+  NoteName: Nota para Sullivan
+  NoteText: "Luke dice que no entiende por qu\xE9 me molesta tanto el encierro...
+    la rutina, el frio constante, todos los dias igual, no hay nada nuevo ni diferente...
+    solo, nieve.\n\r\nNo todos crecimos rodeados de hielo y \xF3rdenes. Viiktor prometi\xF3
+    ayudarme a pedir mi traslado cuando termine el invierno."
