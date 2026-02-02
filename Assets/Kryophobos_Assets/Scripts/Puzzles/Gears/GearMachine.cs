@@ -5,7 +5,6 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 public class GearMachine : PuzzleBase
 {
@@ -383,7 +382,6 @@ public class GearMachine : PuzzleBase
 
         for (int i = 0; i < _sockets.Count; i++)
         {
-            //IGNORAR COLISIONES MIENTRAS LLEVAMOS RESISTENCIA CON LAS COLISIONES DE LAS RESISTENCIAS SELECCIONABLES???
             if (Vector3.Distance(_hitInfo.point, _sockets[i].transform.position) <= _snapDistance)
             {
                 _nearestSocket = _sockets[i].transform;
@@ -536,6 +534,8 @@ public class GearMachine : PuzzleBase
         gear.PuzzleGears = this;
 
         Vector3 spawnPos = new Vector3(_nearestSocket.position.x, _nearestSocket.position.y, (_nearestSocket.position.z - _offset));
+
+        gear.NearestSocket = _nearestSocket;
 
         //Direccion en la que hay que mover el objeto
         gear.MovingDir =  spawnPos - _nearestSocket.position;

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Kryophobos_Assets/Scenes/MainMenu.unity
     guid: bcd6e9721dd088e449664e11e805271a
   - enabled: 1
-    path: Assets/Kryophobos_Assets/Scenes/Level_1.unity
-    guid: 7004fb8d74716f647b18f0f4e4141c73
+    path: Assets/Kryophobos_Assets/Scenes/NivelFinal.unity
+    guid: 4911ce00610049742976d4848252726f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

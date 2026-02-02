@@ -65,14 +65,14 @@ public class PCB : PuzzleBase
     private void Awake()
     {
         //DM_Prop_Resistor_B_#
-        //01 ID = 100k
-        //02 ID = 1k
-        //03 ID = 9.5k
-        //04 ID = 320k
-        //05 ID = 760k
+        //01 ID = 1.2M
+        //02 ID = 12M
+        //03 ID = 3.1G
+        //04 ID = 120K
+        //05 ID = 310
 
         //Si no hay valores en el inspector, entonces por defecto tiene estos.
-        _objectIDValues = new List<string>() { "100k", "1k", "9.5k", "320k", "760k" };
+        _objectIDValues = new List<string>() { "1.2M", "12M", "3.1G", "120K", "310" };
     }
 
     private void Start()

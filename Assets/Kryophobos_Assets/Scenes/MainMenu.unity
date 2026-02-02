@@ -181,6 +181,9 @@ MonoBehaviour:
   _triggerPuzzleElectronics: {fileID: 0}
   _triggerPuzzleGears: {fileID: 0}
   _triggerEnemySpawner: {fileID: 0}
+  _triggerEnemyFirstEncounter: {fileID: 0}
+  _triggerEndingFirstLevel: {fileID: 0}
+  _triggerEndingButton: {fileID: 0}
   _fadeTime: 0.1
 --- !u!4 &5815348
 Transform:
@@ -469,7 +472,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   _clip: {fileID: 32900000, guid: 6f8c02867136ef547a980acc8d1f8ab5, type: 3}
-  _sceneNameToLoad: Level_1
+  _sceneNameToLoad: NivelFinal
   _mainMenuCamera: {fileID: 1914591293}
   _creditsCamera: {fileID: 243554406}
   _blendTime: 3
