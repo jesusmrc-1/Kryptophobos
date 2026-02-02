@@ -769,6 +769,7 @@ MonoBehaviour:
   TargetLastKnownPosition: {x: 0, y: 0, z: 0}
   FollowTime: 10
   SearchingTime: 20
+  IsEnemyFlashed: 0
   RoomWaypoints: []
   Attacking: 0
   HoldingPosition: 0
@@ -2094,7 +2095,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4452115ec4aeda4f94a08bbbed16c9d, type: 2}
+  - {fileID: 2100000, guid: bb72b2935e94906449f35a3e3fa7a6d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
