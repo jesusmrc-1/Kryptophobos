@@ -49,7 +49,8 @@ public class EventsManager : MonoBehaviour
     [SerializeField] private BoxCollider _triggerEndingButton;
 
     [SerializeField] private float _fadeTime;
-    //Trigger cinematica
+
+    [SerializeField] private GameObject[] _enemies;
 
     public void PauseGame()
     {
@@ -95,9 +96,15 @@ public class EventsManager : MonoBehaviour
                 //_triggerPuzzleGears.RemoveInventoryItem();
                 _triggerPuzzleGears.Invoke("RemoveInventoryItem", 2f);
                 //_slidingDoorEntranceRoom.UnlockDoor();
-                _triggerEnemySpawner.SetActive(true);
+                //_triggerEnemySpawner.SetActive(true);
                 _triggerEndingFirstLevel.SetActive(true);
                 _triggerEndingButton.enabled = true;
+                
+                foreach (var enemy in _enemies)
+                {
+                    if (enemy != null) enemy.SetActive(true);
+                }
+
                 break;
         }
     }

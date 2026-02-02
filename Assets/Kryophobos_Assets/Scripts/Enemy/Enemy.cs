@@ -210,12 +210,14 @@ public class Enemy : MonoBehaviour
 
         CurrentWaypoint = Waypoints[0];
 
-        //Si no esta configurado para que se quede quieto vigilando, entoces inicia patrullando
         if (!SpawnJump)
         {
+            //Si no esta configurado para que se quede quieto vigilando, entoces inicia patrullando
             if (!StandStill) MovementStateMachine.Initialize(PatrolState);
             else MovementStateMachine.Initialize(StandStillState);
         }
+
+        if (AlwaysChase) MovementStateMachine.Initialize(FollowTargetState);
 
         ActionStateMachine.Initialize(WatchingState);
 

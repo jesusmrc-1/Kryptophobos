@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -290,7 +288,7 @@ public class GearMachine : PuzzleBase
         PuzzleSolved();
     }
 
-    //Una vez el pizle se complete, cada engranaje de la fila que se ha completado se muestra.
+    //Una vez el puzle se complete, cada engranaje de la fila que se ha completado se muestra.
     void PuzzleSolved()
     {
         _isPuzzleSolved = true;

@@ -200,6 +200,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS_Sparks
       objectReference: {fileID: 0}
+    - target: {fileID: 5126008814350217443, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126008814350217443, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126008814350217443, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126008814350217443, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5247613392653402862, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.025738964
@@ -268,6 +284,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6890451946977471491, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890451946977471491, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890451946977471491, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890451946977471491, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: 'm_VertexStreams.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8042082325424437880, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.025738964
@@ -281,8 +313,16 @@ PrefabInstance:
       value: 0.025738964
       objectReference: {fileID: 0}
     - target: {fileID: 8042082325424437880, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042082325424437880, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042082325424437880, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00040006638
+      value: 0.0004
       objectReference: {fileID: 0}
     - target: {fileID: 8323142218451707434, guid: 4138defb970d2064f82043f4bdc8bf49, type: 3}
       propertyPath: looping
