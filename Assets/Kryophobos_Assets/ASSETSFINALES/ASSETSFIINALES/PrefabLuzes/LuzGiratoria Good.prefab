@@ -120,7 +120,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 2.4077551
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 5
+  m_VolumetricDimmer: 1
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 2.4077551
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 5
+  m_VolumetricDimmer: 1
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1

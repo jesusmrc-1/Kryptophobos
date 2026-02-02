@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
   m_Name: FilmGrain
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.FilmGrain
-  active: 1
+  active: 0
   type:
     m_OverrideState: 1
     m_Value: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1be1b6c95cd2e41b27903b9270817f, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.Vignette
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 0
@@ -189,13 +189,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.8449745, y: 0.86502546, z: 1, w: 0.036127727}
+    m_Value: {x: 0.84000003, y: 0.86133325, z: 1, w: 0.036127727}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.82469547, y: 0.8589108, z: 1, w: -0.10223642}
+    m_Value: {x: 0.82, y: 0.856, z: 1, w: -0.10223642}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.84846854, y: 0.89981794, z: 1, w: -0.08945687}
+    m_Value: {x: 0.85, y: 0.90000004, z: 1, w: -0.08945687}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f086a068d4c5889438831b3ae9afc11c, type: 3}
   m_Name: Tonemapping
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.Tonemapping
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
