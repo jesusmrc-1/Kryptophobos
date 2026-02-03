@@ -89,6 +89,7 @@ public class EventsManager : MonoBehaviour
                 _slidingDoorServerRoom.UnlockDoor();
                 Destroy(_serverRoomDoorFloatingText);
                 _triggerEnemyFirstEncounter.SetActive(true);
+
                 break;
             case GearMachine:
                 //Cinematica, borrar trigger puzzle habilitar booleana interna.
@@ -96,14 +97,16 @@ public class EventsManager : MonoBehaviour
                 //_triggerPuzzleGears.RemoveInventoryItem();
                 _triggerPuzzleGears.Invoke("RemoveInventoryItem", 2f);
                 //_slidingDoorEntranceRoom.UnlockDoor();
-                //_triggerEnemySpawner.SetActive(true);
+                _triggerEnemySpawner.SetActive(true);
                 _triggerEndingFirstLevel.SetActive(true);
                 _triggerEndingButton.enabled = true;
                 
+                /*
                 foreach (var enemy in _enemies)
                 {
                     if (enemy != null) enemy.SetActive(true);
                 }
+                */
 
                 break;
         }

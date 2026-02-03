@@ -42,12 +42,12 @@ public class PlayerMoveState : PlayerState
         if (player.Run.ReadValue<float>() == 0)
         {
             MoveSpeed(frontInput, player.WalkAnimSpeed);
-            player.Speed = 1.5f;
+            player.Speed = player.WalkSpeed;
         }
         else if (player.Run.ReadValue<float>() == 1)
         {
             MoveSpeed(frontInput, player.RunAnimSpeed);
-            player.Speed = 3f;
+            player.Speed = player.RunSpeed;
         }
 
         // TANK CONTROLS => OFF

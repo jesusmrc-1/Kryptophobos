@@ -20,7 +20,7 @@ public class EnemyRepositionState : EnemyState
         Debug.LogWarning("Repositioning State");
 
         //enemy.GPS.isStopped = false;
-        enemy.GPS.speed = 4;
+        enemy.GPS.speed = enemy.RepositionSpeed;
 
         //MEJOR HACER UN PUNTO AL QUE PUEDAN IR LOS ENEMIGOS PERO NO EL JUGADOR, DE ESA FORMA NO TE LOS ENCUENTRAS EN EL MAPA QUIETOS ESPERANDO,
         //ASI SE ESPERAN FUERA DEL ALCANCE TOTAL DEL JUGADOR.
@@ -53,7 +53,7 @@ public class EnemyRepositionState : EnemyState
     {
         base.ExitState();
 
-        enemy.GPS.speed = 2;
+        enemy.GPS.speed = enemy.NormalSpeed;
         enemy.Animator.SetFloat("AnimSpeed", 1.5f);
         _timer = 0f;
     }

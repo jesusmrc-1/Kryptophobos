@@ -76,6 +76,9 @@ public class Enemy : MonoBehaviour
     public float FollowTime;
     public float SearchingTime;
 
+    public float RepositionSpeed;
+    public float NormalSpeed;
+
     public bool IsEnemyFlashed;
 
     public List<GameObject> RoomWaypoints = new List<GameObject>();

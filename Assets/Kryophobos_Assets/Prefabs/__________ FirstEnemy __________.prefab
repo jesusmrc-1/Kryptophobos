@@ -6028,7 +6028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8793435809751825418}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000007077493, y: -0.6826868, z: 0.00000066123386, w: 0.73071116}
+  m_LocalRotation: {x: 0, y: -0.6826874, z: 0, w: 0.7307106}
   m_LocalPosition: {x: -10.54, y: -0, z: -9.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6137,7 +6137,7 @@ MonoBehaviour:
   CurrentWaypoint: {fileID: 0}
   index: 0
   MinDistanceToChangeWaypoint: 2
-  AttackDistance: 1.5
+  AttackDistance: 3
   AttackDelay: 3
   PostAttackDelay: 1
   AttackImpulse: 100
@@ -6145,6 +6145,8 @@ MonoBehaviour:
   TargetLastKnownPosition: {x: 0, y: 0, z: 0}
   FollowTime: 10
   SearchingTime: 20
+  RepositionSpeed: 3
+  NormalSpeed: 2
   IsEnemyFlashed: 0
   RoomWaypoints: []
   Attacking: 0

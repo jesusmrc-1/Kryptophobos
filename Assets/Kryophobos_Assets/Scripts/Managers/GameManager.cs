@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,6 +18,8 @@ public class GameManager : MonoBehaviour
     public List<string> CheckpointTriggers { get; private set; } = new List<string>();
     public List<string> CutsceneTriggers { get; private set; } = new List<string>();
     public List<string> VFX { get; private set; } = new List<string>();
+
+    public List<string> IDList { get; private set; } = new List<string>();
     public bool PlayerHasFlashlight;
     private void Awake()
     {

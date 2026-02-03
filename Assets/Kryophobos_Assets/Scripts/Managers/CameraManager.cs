@@ -62,15 +62,15 @@ public class CameraManager : MonoBehaviour
     //Enfocamos al puzle.
     public void FocusPuzzle(GameObject puzzleCamera)
     {
-        _activeCamera.SetActive(false);
-        puzzleCamera.SetActive(true);
+        if (_activeCamera != null) _activeCamera.SetActive(false);
+        if(puzzleCamera != null) puzzleCamera.SetActive(true);
     }
 
     //Dejamos de enfocar al puzle.
     public void UnfocusPuzzle(GameObject puzzleCamera)
     {
-        puzzleCamera.SetActive(false);
-        _activeCamera.SetActive(true);
+        if ( puzzleCamera != null) puzzleCamera.SetActive(false);
+        if ( _activeCamera != null) _activeCamera.SetActive(true);
     }
     #endregion
 

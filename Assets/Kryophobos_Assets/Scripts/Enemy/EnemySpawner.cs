@@ -18,10 +18,14 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private float _force;
 
+    [SerializeField] private GameObject[] _enemies;
+
+    [SerializeField] private bool _enableNormalSpawn;
+
     private void Start()
     {
         //TESTING BOOL
-        if (IsSpawnerEnabled) StartCoroutine(EnableSpawner());
+        if (IsSpawnerEnabled && !_enableNormalSpawn) StartCoroutine(EnableSpawner());
     }
 
     public IEnumerator EnableSpawner()
@@ -71,7 +75,14 @@ public class EnemySpawner : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(EnableSpawner());
+            if (!_enableNormalSpawn) StartCoroutine(EnableSpawner());
+            else if (_enableNormalSpawn)
+            {
+                foreach (var enemy in _enemies)
+                {
+                    if (enemy != null) enemy.SetActive(true);
+                }
+            }
         }
     }
 }

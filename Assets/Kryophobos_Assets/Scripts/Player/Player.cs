@@ -24,7 +24,10 @@ public class Player : MonoBehaviour, IDamageable
     public float PickupRotationSpeed;
     public float PickupDelay;
 
+    public float WalkSpeed;
     public float WalkAnimSpeed;
+
+    public float RunSpeed;
     public float RunAnimSpeed;
 
     public PlayerInventory inventory;
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour, IDamageable
     public bool PlayerHasRequiredItems;
 
     public bool TankControls;
+
+
 
     public InteractableDistanceChecker IDC;
 
@@ -122,20 +127,27 @@ public class Player : MonoBehaviour, IDamageable
     {
         Debug.Log(ChargeFlashlight.ReadValue<float>());
 
-        CurrentMovementState = MovementStateMachine.CurrentPlayerState.ToString();
-        CurrentActionState = ActionStateMachine.CurrentPlayerState.ToString();
+        if (MovementStateMachine.CurrentPlayerState != null)
+        {
+            CurrentMovementState = MovementStateMachine.CurrentPlayerState.ToString();
 
-        //Llama a la funcion Update del estado actual
-        MovementStateMachine.CurrentPlayerState.FrameUpdate();
+            //Llama a la funcion Update del estado actual
+            MovementStateMachine.CurrentPlayerState.FrameUpdate();
+        }
 
-        ActionStateMachine.CurrentPlayerState.FrameUpdate();
+        if (MovementStateMachine.CurrentPlayerState != null)
+        {
+            CurrentActionState = ActionStateMachine.CurrentPlayerState.ToString();
+
+            ActionStateMachine.CurrentPlayerState.FrameUpdate();
+        }
     }
 
     private void FixedUpdate()
     {
-        MovementStateMachine.CurrentPlayerState.PhysicsUpdate();
+        if (MovementStateMachine.CurrentPlayerState != null) MovementStateMachine.CurrentPlayerState.PhysicsUpdate();
 
-        ActionStateMachine.CurrentPlayerState.PhysicsUpdate();
+        if (MovementStateMachine.CurrentPlayerState != null) ActionStateMachine.CurrentPlayerState.PhysicsUpdate();
     }
     #endregion
 
@@ -165,6 +177,8 @@ public class Player : MonoBehaviour, IDamageable
     public void Die()
     {
         Debug.Log("El jugador ha muerto");
+        Move.Disable();
+        ChargeFlashlight.Disable();
         _gameEvents.PlayerDead();
     }
     #endregion

@@ -18,7 +18,10 @@ public class PlayerIdleState : PlayerState
         player.Animator.SetBool("playerMoving", false);
 
         if (!player.inventory.HasFlashlight) player.Animator.SetBool("hasLantern", false);
-        else if (player.inventory.HasFlashlight) player.Animator.SetBool("hasLantern", true);
+        else if (player.inventory.HasFlashlight)
+        {
+            player.Animator.SetBool("hasLantern", true);
+        }
     }
 
     public override void ExitState()

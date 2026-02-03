@@ -96,6 +96,19 @@ public class PlayerInventory : MonoBehaviour
     {
         HasFlashlight = GameManager.Instance.PlayerHasFlashlight;
 
+        if (HasFlashlight)
+        {
+            if (_flashlightGameObject != null) {
+                _flashlightGameObject.SetActive(true);
+                Flashlight flashlight = _flashlightGameObject.GetComponent<Flashlight>();
+                Player player = GetComponent<Player>();
+                if (flashlight != null && player != null)
+                {
+                    player.FlashLight = flashlight;
+                }
+            }
+        }
+
         Items.Clear();
         Notes.Clear();
 
