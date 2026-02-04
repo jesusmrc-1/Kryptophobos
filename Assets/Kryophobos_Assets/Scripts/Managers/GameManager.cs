@@ -32,4 +32,22 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    public void ClearSavedData()
+    {
+        LastActiveCamera = "";
+        PlayerPosition = Vector3.zero;
+        PlayerItems.Clear();
+        PlayerNotes.Clear();
+        Objectives.Clear();
+        CompletedObjectives.Clear();
+        Doors.Clear();
+        Puzzles.Clear();
+        NewObjectiveTriggers.Clear();
+        CheckpointTriggers.Clear();
+        CutsceneTriggers.Clear();
+        VFX.Clear();
+        IDList.Clear();
+        PlayerHasFlashlight = false;
+    }
 }

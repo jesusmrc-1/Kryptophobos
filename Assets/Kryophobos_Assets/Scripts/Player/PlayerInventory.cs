@@ -83,12 +83,12 @@ public class PlayerInventory : MonoBehaviour
 
     public void HideFlashlight()
     {
-        if (Flashlight != null) _flashlightGameObject.SetActive(false);
+        if (Flashlight != null && HasFlashlight) _flashlightGameObject.SetActive(false);
     }
 
     public void ShowFlashlight()
     {
-        if (Flashlight != null) _flashlightGameObject.SetActive(true);
+        if (Flashlight != null && HasFlashlight) _flashlightGameObject.SetActive(true);
     }
 
     //Llamar desde cada puzle, cada uno sabe si esta hecho, luego le dicen al inventario del jugador, oye, si estoy, entonces borra los items

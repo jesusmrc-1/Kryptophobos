@@ -5,6 +5,8 @@ public class ItemPickup : TriggerBase
     [Tooltip("Aquí se referencia el objeto (Scriptable Object) que da al jugador cuando se recoje.")]
     [SerializeField] private ItemData _itemData;
 
+    [SerializeField] private OnOffGameObject _onOffGameObject;
+    
     private Player _player;
     private PlayerInventory _playerInventory;
     private void Start()
@@ -35,6 +37,8 @@ public class ItemPickup : TriggerBase
         }
         else if (_itemData == null) Debug.LogError("ERROR: El trigger no tiene referenciado un item (Scriptable Object).");
 
+        //if (_onOffGameObject != null) Destroy(_onOffGameObject.gameObject);
+
         Destroy(gameObject);
     }
 
@@ -48,6 +52,9 @@ public class ItemPickup : TriggerBase
 
             if (itemData == _itemData)
             {
+                //Destruir la luz y luego el gameObject
+                //if (_onOffGameObject != null) Destroy(_onOffGameObject.gameObject);
+
                 Destroy(gameObject);
             }
         }
