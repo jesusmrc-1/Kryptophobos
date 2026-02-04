@@ -80,7 +80,12 @@ public class EnemySpawner : MonoBehaviour
             {
                 foreach (var enemy in _enemies)
                 {
-                    if (enemy != null) enemy.SetActive(true);
+                    if (enemy != null)
+                    {
+                        enemy.SetActive(true);
+                    }
+                        
+                        
                 }
             }
         }

@@ -24,6 +24,8 @@ public class MicroSwitch : MonoBehaviour
     [SerializeField] private string _newObjectiveText;
 
     [SerializeField] private float _endingDelayTime;
+
+    private bool _lockButtonBehaviour;
     void Start()
     {
         _puzzle = GetComponentInParent<PCB>();
@@ -37,7 +39,7 @@ public class MicroSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_puzzle != null)
+        if (_puzzle != null && !_lockButtonBehaviour)
         {
             if (_press.triggered)
             {
@@ -85,6 +87,7 @@ public class MicroSwitch : MonoBehaviour
                 {
                     //TRUE =  LUZ VERDE ANIMADA, FUNCIONA.
                     if (_greenLEDAnimator != null) _greenLEDAnimator.SetTrigger("On");
+                    _lockButtonBehaviour = true;
                     _puzzle.DisableInputs();
                     StartCoroutine(Delay());
                 }

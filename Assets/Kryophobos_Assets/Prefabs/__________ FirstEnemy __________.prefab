@@ -6137,7 +6137,7 @@ MonoBehaviour:
   CurrentWaypoint: {fileID: 0}
   index: 0
   MinDistanceToChangeWaypoint: 2
-  AttackDistance: 3
+  AttackDistance: 4.5
   AttackDelay: 3
   PostAttackDelay: 1
   AttackImpulse: 100

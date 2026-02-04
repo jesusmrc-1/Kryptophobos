@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class GearMachine : PuzzleBase
 {
     [SerializeField] private string _ID;
+    [SerializeField] private ItemData _item;
 
     private EventsManager _gameEvents;
 
@@ -625,6 +626,28 @@ public class GearMachine : PuzzleBase
             }
             _animator.SetBool(row, true);
             _gameEvents.PuzzleSolved(this);
+
+            GameObject PlayerGO = GameObject.FindGameObjectWithTag("Player");
+            if (PlayerGO != null)
+            {
+                PlayerInventory playerInventory = PlayerGO.GetComponent<PlayerInventory>();
+                if (playerInventory != null)
+                {
+                    //Buscar el ItemStack que contenga el SO ItemData
+                    foreach (ItemStack itemStack in playerInventory.Items)
+                    {
+                        if (itemStack != null)
+                        {
+                            ItemData itemData = itemStack.Item;
+                            if (itemData == _item)
+                            {
+                                playerInventory.Items.Remove(itemStack);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

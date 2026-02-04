@@ -220,7 +220,10 @@ public class Enemy : MonoBehaviour
             else MovementStateMachine.Initialize(StandStillState);
         }
 
-        if (AlwaysChase) MovementStateMachine.Initialize(FollowTargetState);
+        if (AlwaysChase)
+        {
+            MovementStateMachine.Initialize(FollowTargetState);
+        }
 
         ActionStateMachine.Initialize(WatchingState);
 

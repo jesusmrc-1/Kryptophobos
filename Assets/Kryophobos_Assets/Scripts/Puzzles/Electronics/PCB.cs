@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PCB : PuzzleBase
 {
     [SerializeField] private string _ID;
+    [SerializeField] private ItemData _item;
 
     [SerializeField] private List<string> _objectIDValues;
 
@@ -438,6 +439,28 @@ public class PCB : PuzzleBase
         {
             //El puzle esta hecho, cambiar variables, llamar metodos etc..
             _isPuzzleSolved = true;
+            GameObject PlayerGO = GameObject.FindGameObjectWithTag("Player");
+            if (PlayerGO != null)
+            {
+                PlayerInventory playerInventory = PlayerGO.GetComponent<PlayerInventory>();
+                if (playerInventory != null)
+                {
+                    //Buscar el ItemStack que contenga el SO ItemData
+                    foreach (ItemStack itemStack in playerInventory.Items)
+                    {
+                        if (itemStack != null)
+                        {
+                            ItemData itemData = itemStack.Item ;
+                            if (itemData == _item)
+                            {
+                                playerInventory.Items.Remove(itemStack);
+                                GameManager.Instance.PlayerItems.Remove(itemStack);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
             _gameEvents.PuzzleSolved(this);
         }
     }

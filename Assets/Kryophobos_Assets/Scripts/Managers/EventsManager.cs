@@ -81,11 +81,15 @@ public class EventsManager : MonoBehaviour
 
     public void PuzzleSolved(PuzzleBase puzzle)
     {
+
+        //PROBAR .Invoke("RemoveInventoryItem", 0.1f); !!!!!!!!!!!!!!!!!!!!
+
         switch (puzzle)
         {
             case PCB:
                 //Cinematica, borrar trigger puzzle habilitar booleana interna.
                 _triggerPuzzleElectronics.Disable();
+                _triggerPuzzleElectronics.Invoke("RemoveInventoryItem", 2f);
                 _slidingDoorServerRoom.UnlockDoor();
                 Destroy(_serverRoomDoorFloatingText);
                 _triggerEnemyFirstEncounter.SetActive(true);
