@@ -20,6 +20,8 @@ public class EnemyPreparingAttackState : EnemyState
         Debug.LogWarning("PreparingAttack State");
 
         enemy.Animator.SetBool("IsTargetClose", true);
+
+        enemy.PrepareAttackSFX.Play();
     }
 
     public override void ExitState()
@@ -27,6 +29,8 @@ public class EnemyPreparingAttackState : EnemyState
         base.ExitState();
 
         enemy.Animator.SetBool("IsTargetClose", false);
+
+        enemy.AudioSource.Stop();
     }
 
     public override void FrameUpdate()

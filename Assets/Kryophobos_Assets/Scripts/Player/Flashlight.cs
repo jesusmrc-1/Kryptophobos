@@ -47,8 +47,9 @@ public class Flashlight : MonoBehaviour
     private Light _lightBulb;
     private Player _player;
     private Slider _slider;
-    private Animator _animator;
     private Animator _animatorCharacter;
+
+    private AudioSource _audioSource;
 
     private bool _isGamePaused;
 
@@ -61,12 +62,14 @@ public class Flashlight : MonoBehaviour
     {
         LayerMask ignoredMasks = IgnorePlayer | IgnoreEnemyVision | IgnoreRaycast | IgnoreInteractable;
         _ignoreLayerMasks = ~ignoredMasks;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {
-        //charge.Enable();
-        _animator = GetComponent<Animator>();
+        _maxLightIntensity = 70f;
+        _maxLightIntensityAtThisCharge = 50f;
 
         if (transform.GetChild(0).GetComponent<Light>() == null)
         {
@@ -231,6 +234,7 @@ public class Flashlight : MonoBehaviour
     {
         _isFlashing = true;
         _animatorCharacter.SetTrigger("FlashStun");
+        _audioSource.Play();
         FlashTargets();
 
         float timer = 0f;

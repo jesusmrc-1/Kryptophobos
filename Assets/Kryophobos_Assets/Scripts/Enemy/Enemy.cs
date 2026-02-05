@@ -121,6 +121,12 @@ public class Enemy : MonoBehaviour
     public Rigidbody RB;
     public Animator Animator;
 
+    public AudioSource AudioSource;
+
+    public AudioSource PrepareAttackSFX;
+    public AudioSource AttackingSFX;
+    public AudioSource FlashedScreamSFX;
+
     #region Finite State Machines
     public EnemyStateMachine MovementStateMachine { get; set; }
     public EnemyStateMachine ActionStateMachine { get; set; }
@@ -150,6 +156,7 @@ public class Enemy : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         GPS = GetComponent<NavMeshAgent>();
         RB = GetComponent<Rigidbody>();
+        AudioSource = GetComponent<AudioSource>();
         this.Animator = GetComponent<Animator>();
 
         //FSM

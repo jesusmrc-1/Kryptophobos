@@ -18,6 +18,8 @@ public class EnemyAttackingState : EnemyState
 
         Debug.LogWarning("Attacking State");
 
+        enemy.AttackingSFX.Play();
+
         Vector3 lookingDirection = enemy.Player.transform.position - enemy.transform.position;
 
         lookingDirection.y = 0f;

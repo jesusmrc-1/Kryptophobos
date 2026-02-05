@@ -19,6 +19,8 @@ public class EnemyFlashedState : EnemyState
         enemy.Animator.SetTrigger("FlashStun");
         enemy.GPS.isStopped = true;
 
+        enemy.FlashedScreamSFX.Play();
+
     }
 
     public override void ExitState()

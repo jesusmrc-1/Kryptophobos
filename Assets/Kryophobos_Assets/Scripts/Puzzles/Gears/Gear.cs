@@ -19,11 +19,15 @@ public class Gear : MonoBehaviour
     [HideInInspector] public Transform NearestSocket;   //Guarda la información del hueco en el que se coloca al ser instanciada desde el script Puzzle_Gears.
     [HideInInspector] public GearMachine PuzzleGears;
 
-    private void Start()
+    private AudioSource _audioSource;
+
+    private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _collider = GetComponent<Collider>();
         _objectData = GetComponent<PuzzleObjectData>();
     }
+
     void Update()
     {
         bool isPuzzleSolved = PuzzleGears.GetPuzzleStatus();
@@ -39,9 +43,10 @@ public class Gear : MonoBehaviour
             _collider.enabled = false;   //Evitamos que si el engranaje no cabe, no poder hacer click en el cuando esta volviendo para evitar sumar un engranaje extra.
         }
 
-        if (Vector3.Distance(transform.position, NearestSocket.position) <= GearClickOffset)
+        if (Vector3.Distance(transform.position, NearestSocket.position) <= GearClickOffset && !_hasGearClicked)
         {
             _hasGearClicked = true;
+            _audioSource.Play();
         }
     }
 
