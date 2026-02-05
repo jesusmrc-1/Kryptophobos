@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Gear : MonoBehaviour
@@ -46,6 +47,8 @@ public class Gear : MonoBehaviour
         if (Vector3.Distance(transform.position, NearestSocket.position) <= GearClickOffset && !_hasGearClicked)
         {
             _hasGearClicked = true;
+            float rng = Random.Range(0.8f, 0.9f);
+            _audioSource.pitch = rng;
             _audioSource.Play();
         }
     }

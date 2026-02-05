@@ -94,11 +94,12 @@ public class GearMachine : PuzzleBase
 
     private string _randomRow;
 
-    [SerializeField] private AudioSource GearsMoving;
+    [SerializeField] private AudioSource _audioSource;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -294,7 +295,7 @@ public class GearMachine : PuzzleBase
     //Una vez el puzle se complete, cada engranaje de la fila que se ha completado se muestra.
     void PuzzleSolved()
     {
-        GearsMoving.Play();
+        _audioSource.Play();
         _isPuzzleSolved = true;
         _gameEvents.PuzzleSolved(this);
         GameManager.Instance.Puzzles.Add(_ID);
@@ -601,7 +602,7 @@ public class GearMachine : PuzzleBase
             //El puzle esta hecho, cambiar variables, llamar metodos etc..
             _isPuzzleSolved = true;
 
-            GearsMoving.Play();
+            _audioSource.Play();
 
             GameObject[] gears = null;
             string row = "";

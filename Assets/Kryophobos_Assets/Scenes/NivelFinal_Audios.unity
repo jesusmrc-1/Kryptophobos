@@ -28997,7 +28997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8793435809751825418, guid: 094ab4792de168749903fa5826e72cef, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9092260253661571763, guid: 094ab4792de168749903fa5826e72cef, type: 3}
       propertyPath: m_Radius
@@ -77330,6 +77330,8 @@ GameObject:
   - component: {fileID: 1548030584728950845}
   - component: {fileID: 1822381573374990177}
   - component: {fileID: 8710634512096103545}
+  - component: {fileID: 9124520253147446368}
+  - component: {fileID: 9124520253147446369}
   m_Layer: 6
   m_Name: '********** P L A Y E R **********'
   m_TagString: Player
@@ -137234,7 +137236,7 @@ MonoBehaviour:
   _smallGearQuantityText: {fileID: 6616706671016450750}
   _newObjectiveText: Escape?
   _endingDelayTime: 3
-  GearsMoving: {fileID: 0}
+  _audioSource: {fileID: 0}
 --- !u!82 &7468925979041366872
 AudioSource:
   m_ObjectHideFlags: 0
@@ -138062,6 +138064,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9124520253147446368}
+        m_TargetAssemblyTypeName: OnOffCollider, Assembly-CSharp
+        m_MethodName: DisableCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9124520253147446369}
+        m_TargetAssemblyTypeName: OnOffGravity, Assembly-CSharp
+        m_MethodName: DisableGravity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnNotDoingPuzzle:
     m_PersistentCalls:
       m_Calls:
@@ -138248,6 +138274,42 @@ MonoBehaviour:
       - m_Target: {fileID: 3857516998070680819}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
         m_MethodName: ShowFlashlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3857516998070680819}
+        m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
+        m_MethodName: ShowFlashlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9124520253147446368}
+        m_TargetAssemblyTypeName: OnOffCollider, Assembly-CSharp
+        m_MethodName: EnableCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9124520253147446369}
+        m_TargetAssemblyTypeName: OnOffGravity, Assembly-CSharp
+        m_MethodName: EnableGravity
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159759,6 +159821,32 @@ MonoBehaviour:
   IFramesDelay: 2
   GodMode: 0
   HealingRate: 0.25
+--- !u!114 &9124520253147446368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972021347643416467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403224f5e4094eb42b27b767bb6c5980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnOffCollider
+  _collider: {fileID: 0}
+--- !u!114 &9124520253147446369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972021347643416467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c195ceee847eb14fa38f1188ec13bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnOffGravity
+  _rigidBody: {fileID: 0}
 --- !u!114 &9126768824157891817
 MonoBehaviour:
   m_ObjectHideFlags: 0

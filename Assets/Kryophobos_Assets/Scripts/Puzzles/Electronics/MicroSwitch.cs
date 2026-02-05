@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Collections;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +28,9 @@ public class MicroSwitch : MonoBehaviour
     [SerializeField] private float _endingDelayTime;
 
     private bool _lockButtonBehaviour;
+
+    [SerializeField] private AudioSource _microSwitch;
+    [SerializeField] private AudioSource _resistorsExploding;
     void Start()
     {
         _puzzle = GetComponentInParent<PCB>();
@@ -52,6 +57,7 @@ public class MicroSwitch : MonoBehaviour
                     if (thisMicroSwitch != null)
                     {
                         _animator.SetBool("IsPressed", true);
+                        //_microSwitch.Play();
                         _puzzle.CheckPuzzleStatus();
                         StopAllCoroutines();
                         StartCoroutine(HoldingButton());
@@ -82,6 +88,7 @@ public class MicroSwitch : MonoBehaviour
                     //FALSE = LUZ ROJA ANIMADA, PETAN LAS RESISTENCIAS, SE REINICIA.
                     if (_redLEDAnimator != null) _redLEDAnimator.SetTrigger("On");
                     _puzzle.ResetPuzzle();
+                    _resistorsExploding.Play();
                 }
                 else if (_isPuzzleSolved)
                 {
