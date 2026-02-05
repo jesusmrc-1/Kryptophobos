@@ -15,4 +15,6 @@ MonoBehaviour:
   NoteName: Controles personaje
   NoteText: '- WASD para moverse.
 
-    -SHIFT para correr.'
+    -SHIFT para correr.
+
+    -F para interactuar.'

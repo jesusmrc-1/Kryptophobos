@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1699824908316907751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2852515, y: 0.2852515, z: 0.2852515}
+  m_LocalPosition: {x: 0.049, y: 0.1768, z: -0.014}
+  m_LocalScale: {x: 0.2852515, y: 0.09841177, z: 0.2852515}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4162203970849537739}
@@ -133,10 +133,10 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.936467
+  m_Intensity: 3.7588375
   m_Range: 10
-  m_SpotAngle: 110.167496
-  m_InnerSpotAngle: 9.685692
+  m_SpotAngle: 96.49183
+  m_InnerSpotAngle: 2.7185898
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 0.90770876
+  m_InnerSpotPercent: 47.499985
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -462,9 +462,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.6052966
+  m_Intensity: 1.5212121
   m_Range: 10
-  m_SpotAngle: 109.411255
+  m_SpotAngle: 147.85153
   m_InnerSpotAngle: 9.685692
   m_CookieSize: 10
   m_Shadows:
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 0.91398275
+  m_InnerSpotPercent: 39.66356
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -918,9 +918,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5782217
+  m_Intensity: 2.9675903
   m_Range: 10
-  m_SpotAngle: 161.23892
+  m_SpotAngle: 87.0542
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -963,7 +963,7 @@ Light:
   m_BounceIntensity: 2
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 1.694156e-21, y: 1.86e-43, z: NaN, w: 3.5564e-41}
+  m_BoundingSphereOverride: {x: 1.4002329e-28, y: 1.3e-44, z: NaN, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 73.0618
+  m_InnerSpotPercent: 54.193287
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1

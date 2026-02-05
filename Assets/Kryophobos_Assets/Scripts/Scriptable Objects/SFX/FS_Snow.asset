@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a09ac068bb545e04ca1d07b5b485e118, type: 3}
   - {fileID: 8300000, guid: c5f3e2ba53a14664e9238448b70dcd9c, type: 3}
   - {fileID: 8300000, guid: 211586cf7844612448ca8cb1b07fccbd, type: 3}
-  volume: 1
+  volume: 0.1
   pitchRange: {x: 0.95, y: 1.05}
