@@ -42,6 +42,7 @@ TagManager:
   - UIManager
   - VideoPlayer
   - Button
+  - AmbienceManager
   layers:
   - Default
   - TransparentFX

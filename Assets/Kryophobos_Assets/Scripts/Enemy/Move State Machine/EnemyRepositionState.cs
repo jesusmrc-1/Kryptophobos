@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyRepositionState : EnemyState
@@ -47,6 +48,14 @@ public class EnemyRepositionState : EnemyState
             }
         }
         */
+
+        if (enemy.AmbienceManager != null)
+        {
+            enemy.AmbienceManager.TensionSFX(true);
+
+            Enemy returnEnemy = enemy.AmbienceManager.enemiesSearching.Find(enemyOnList => enemyOnList == enemy);
+            if (returnEnemy == null) enemy.AmbienceManager.enemiesSearching.Add(enemy);
+        }  
     }
 
     public override void ExitState()

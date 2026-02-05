@@ -16,6 +16,15 @@ public class EnemyReturnPositionState : EnemyState
         base.EnterState();
 
         enemy.FollowingTarget = false;
+
+        if (enemy.AmbienceManager != null)
+        {
+            enemy.AmbienceManager.enemiesSearching.Remove(enemy);
+            enemy.AmbienceManager.TensionSFX(false);
+
+            enemy.AmbienceManager.enemiesFollowing.Remove(enemy);
+            enemy.AmbienceManager.PersecutionSFX(false);
+        }
     }
 
     public override void ExitState()

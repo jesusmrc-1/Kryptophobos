@@ -87,8 +87,9 @@ public class MicroSwitch : MonoBehaviour
                 {
                     //FALSE = LUZ ROJA ANIMADA, PETAN LAS RESISTENCIAS, SE REINICIA.
                     if (_redLEDAnimator != null) _redLEDAnimator.SetTrigger("On");
+                    bool placedObjects = _puzzle.CheckPlacedObjects();
+                    if (placedObjects) _resistorsExploding.Play();
                     _puzzle.ResetPuzzle();
-                    _resistorsExploding.Play();
                 }
                 else if (_isPuzzleSolved)
                 {

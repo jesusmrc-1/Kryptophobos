@@ -470,4 +470,10 @@ public class PCB : PuzzleBase
         _select.Disable();
         _cancelSelection.Disable();
     }
+
+    public bool CheckPlacedObjects()
+    {
+        if (_socketStatus.Contains(true)) return true;
+        else return false;
+    }
 }

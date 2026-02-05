@@ -21,6 +21,14 @@ public class EnemyFlashedState : EnemyState
 
         enemy.FlashedScreamSFX.Play();
 
+        if (enemy.AmbienceManager != null)
+        {
+            enemy.AmbienceManager.enemiesSearching.Remove(enemy);
+            enemy.AmbienceManager.TensionSFX(false);
+            
+            enemy.AmbienceManager.enemiesFollowing.Remove(enemy);
+            enemy.AmbienceManager.PersecutionSFX(false);
+        }
     }
 
     public override void ExitState()

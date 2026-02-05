@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -27,6 +28,11 @@ public class Gear : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _collider = GetComponent<Collider>();
         _objectData = GetComponent<PuzzleObjectData>();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(ReturnGear());
     }
 
     void Update()
@@ -65,6 +71,27 @@ public class Gear : MonoBehaviour
 
         //Si el engranaje toca cualquier otro y no esta colocado, se quita el engranaje y se devuelve a la cantidad que teniamos.
         if((other.tag == "Big_Gear" || other.tag == "Medium_Gear" || other.tag == "Small_Gear" || other.tag == "Obstacle") && !_hasGearClicked && _canGearFit)
+        {
+            GearMachine puzzleGearsScript = GameObject.FindGameObjectWithTag("Puzzle_Gears").GetComponent<GearMachine>();
+
+            if (puzzleGearsScript != null)
+            {
+                puzzleGearsScript.SetSocketObjectID(_objectData.SocketIndex, "Empty ID");
+                puzzleGearsScript.SetSocketStatus(_objectData.SocketIndex, false);
+                puzzleGearsScript.ReturnObject(_objectData.ID);
+
+                _canGearFit = false;
+                Destroy(gameObject, _despawnTime);
+            }
+        }
+    }
+
+    //Fix maquina debora engranajes
+    private IEnumerator ReturnGear()
+    {
+        yield return new WaitForSeconds(3f);
+
+        if (!_hasGearClicked)
         {
             GearMachine puzzleGearsScript = GameObject.FindGameObjectWithTag("Puzzle_Gears").GetComponent<GearMachine>();
 

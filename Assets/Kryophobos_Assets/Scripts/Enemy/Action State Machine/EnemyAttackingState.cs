@@ -49,6 +49,12 @@ public class EnemyAttackingState : EnemyState
         enemy.GPS.enabled = true;
         enemy.TargetLastKnownPosition = enemy.Player.transform.position;
         enemy.RB.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        if (enemy.AmbienceManager != null)
+        {
+            enemy.AmbienceManager.enemiesFollowing.Remove(enemy);
+            enemy.AmbienceManager.PersecutionSFX(false);
+        }  
     }
 
     public override void FrameUpdate()

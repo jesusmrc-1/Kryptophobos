@@ -31,6 +31,7 @@ public class EnemyPreparingAttackState : EnemyState
         enemy.Animator.SetBool("IsTargetClose", false);
 
         enemy.AudioSource.Stop();
+        enemy.PlayerSpotted = false;
     }
 
     public override void FrameUpdate()

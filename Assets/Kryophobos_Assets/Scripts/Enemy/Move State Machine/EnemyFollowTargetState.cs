@@ -23,6 +23,14 @@ public class EnemyFollowTargetState : EnemyState
         enemy.Animator.SetBool("EndSearching", false);
 
         enemy.PlayerSpotted = true;
+        enemy.GPS.isStopped = false;
+
+        if (enemy.AmbienceManager != null)
+        {
+            enemy.AmbienceManager.PersecutionSFX(true);
+            Enemy returnEnemy = enemy.AmbienceManager.enemiesFollowing.Find(enemyOnList => enemyOnList == enemy);
+            if (returnEnemy == null) enemy.AmbienceManager.enemiesFollowing.Add(enemy);
+        }
     }
 
     public override void ExitState()
@@ -42,6 +50,16 @@ public class EnemyFollowTargetState : EnemyState
             if (_timer >= enemy.FollowTime)
             {
                 _timer = 0;
+
+                if (enemy.AmbienceManager != null) 
+                {
+                    enemy.AmbienceManager.enemiesFollowing.Remove(enemy);
+                    enemy.AmbienceManager.PersecutionSFX(false);
+                }
+
+                //Forzar enemig patrulla
+                enemy.StandStill = false;
+
                 if (enemy.StandStill) enemy.MovementStateMachine.ChangeState(enemy.ReturnPositionState);    //Si esta configurado el enemigo para quedarse en una posicion, vuelve.
                 else enemy.MovementStateMachine.ChangeState(enemy.PatrolState);                             //Si no lo esta, sigue patruyando.
             } 

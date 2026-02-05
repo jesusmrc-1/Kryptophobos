@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
     public string CurrentMovementState;
     public string CurrentActionState;
 
+    public AmbienceManager AmbienceManager;
 
     public GameObject Player;
 
@@ -189,6 +190,12 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        GameObject AmbienceManagerGO = GameObject.FindGameObjectWithTag("AmbienceManager");
+        if (AmbienceManagerGO != null)
+        {
+            AmbienceManager = AmbienceManagerGO.GetComponent<AmbienceManager>();
+        }
+
         LayerMask ignoredLayers = IgnoreEnemy | IgnoreEnemyVision | IgnoreRaycast | IgnoreInteractable;
 
         IgnoredLayers = ~ignoredLayers;

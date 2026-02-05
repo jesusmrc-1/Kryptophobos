@@ -24,6 +24,12 @@ public class EnemySearchingState : EnemyState
 
         enemy.StartSearching = false;
         _timer = 0;
+
+        if (enemy.AmbienceManager != null)
+        {
+            enemy.AmbienceManager.enemiesSearching.Remove(enemy);
+            enemy.AmbienceManager.TensionSFX(false);
+        }
     }
 
     public override void FrameUpdate()
