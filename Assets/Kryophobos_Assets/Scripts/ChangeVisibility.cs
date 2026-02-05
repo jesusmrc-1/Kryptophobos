@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ChangeVisibility : MonoBehaviour
 {
+    [SerializeField] private bool _gameObjectCanBeDisabled;
+
     [SerializeField] private bool _beginDisabled;
     [SerializeField] private Renderer _renderMesh;
     [SerializeField] private TextMeshProUGUI _textMeshPro;
@@ -28,6 +30,12 @@ public class ChangeVisibility : MonoBehaviour
 
     public void DisableRenderer()
     {
+        if (_gameObjectCanBeDisabled)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         if (_renderMesh != null) _renderMesh.enabled = false;
         if (_textMeshPro != null) _textMeshPro.enabled = false;
         if (_light != null) _light.enabled = false;
@@ -36,6 +44,12 @@ public class ChangeVisibility : MonoBehaviour
 
     public void EnableRenderer()
     {
+        if (_gameObjectCanBeDisabled)
+        {
+            gameObject.SetActive(true);
+            return;
+        }
+
         if (_renderMesh != null) _renderMesh.enabled = true;
         if (_textMeshPro != null) _textMeshPro.enabled = true;
         if (_light != null) _light.enabled = true;

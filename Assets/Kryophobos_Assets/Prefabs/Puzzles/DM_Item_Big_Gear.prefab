@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovingDir: {x: 0, y: 0, z: 0}
-  GearClickOffset: 0.01
+  GearClickOffset: 0.1
   TypeOfGear: 
   NearestSocket: {fileID: 0}
   PuzzleGears: {fileID: 0}

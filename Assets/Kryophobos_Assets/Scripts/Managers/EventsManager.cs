@@ -52,6 +52,8 @@ public class EventsManager : MonoBehaviour
 
     [SerializeField] private GameObject[] _enemies;
 
+    public WalkieTalkieCall WalkieTalkieCall;
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -104,6 +106,10 @@ public class EventsManager : MonoBehaviour
                 _triggerEnemySpawner.SetActive(true);
                 _triggerEndingFirstLevel.SetActive(true);
                 _triggerEndingButton.enabled = true;
+                if (WalkieTalkieCall != null)
+                {
+                    WalkieTalkieCall.Invoke("Call", 5f);
+                }
                 
                 /*
                 foreach (var enemy in _enemies)
