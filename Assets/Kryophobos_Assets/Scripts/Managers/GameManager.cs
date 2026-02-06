@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public List<string> IDList { get; private set; } = new List<string>();
     public bool PlayerHasFlashlight;
+    public WalkieTalkieCall WalkieTalkieCall;
     private void Awake()
     {
         if (Instance != null && Instance != this)

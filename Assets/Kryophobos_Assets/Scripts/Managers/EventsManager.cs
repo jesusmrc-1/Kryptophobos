@@ -53,6 +53,8 @@ public class EventsManager : MonoBehaviour
     [SerializeField] private GameObject[] _enemies;
 
     public WalkieTalkieCall WalkieTalkieCall;
+    public GameObject PCBParticles;
+    public GameObject GearMachineParticles;
 
     public void PauseGame()
     {
@@ -95,6 +97,7 @@ public class EventsManager : MonoBehaviour
                 _slidingDoorServerRoom.UnlockDoor();
                 Destroy(_serverRoomDoorFloatingText);
                 _triggerEnemyFirstEncounter.SetActive(true);
+                if (PCBParticles != null) Destroy(PCBParticles);
 
                 break;
             case GearMachine:
@@ -106,9 +109,11 @@ public class EventsManager : MonoBehaviour
                 _triggerEnemySpawner.SetActive(true);
                 _triggerEndingFirstLevel.SetActive(true);
                 _triggerEndingButton.enabled = true;
+                if (GearMachineParticles != null) Destroy(GearMachineParticles);
+                GameManager.Instance.WalkieTalkieCall = WalkieTalkieCall;
                 if (WalkieTalkieCall != null)
                 {
-                    WalkieTalkieCall.Invoke("Call", 5f);
+                    WalkieTalkieCall.Invoke("Call", 3f);
                 }
                 
                 /*

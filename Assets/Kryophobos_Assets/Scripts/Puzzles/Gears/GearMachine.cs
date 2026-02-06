@@ -280,6 +280,8 @@ public class GearMachine : PuzzleBase
 
     private IEnumerator Delay(GameObject[] gears, string row)
     {
+        _audioSource.Play();
+
         foreach (GameObject gear in gears)
         {
             MeshRenderer meshRenderer = gear.GetComponent<MeshRenderer>();
@@ -295,7 +297,6 @@ public class GearMachine : PuzzleBase
     //Una vez el puzle se complete, cada engranaje de la fila que se ha completado se muestra.
     void PuzzleSolved()
     {
-        _audioSource.Play();
         _isPuzzleSolved = true;
         _gameEvents.PuzzleSolved(this);
         GameManager.Instance.Puzzles.Add(_ID);
