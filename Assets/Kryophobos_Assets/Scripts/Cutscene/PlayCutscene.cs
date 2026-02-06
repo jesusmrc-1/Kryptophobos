@@ -31,7 +31,7 @@ public class PlayCutscene : MonoBehaviour
             }
             other.gameObject.transform.position = _playerFinalPosition.transform.position;
             GameManager.Instance.CutsceneTriggers.Add(_ID);
-            Destroy(gameObject);
+            Destroy(gameObject, 3f);
         }
     }
 
@@ -41,7 +41,7 @@ public class PlayCutscene : MonoBehaviour
 
         if (_ID == this._ID)
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 3f);
         }
     }
 }

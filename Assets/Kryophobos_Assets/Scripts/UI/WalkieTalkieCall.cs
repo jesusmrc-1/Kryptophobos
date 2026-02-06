@@ -5,6 +5,7 @@ using UnityEngine;
 public class WalkieTalkieCall : MonoBehaviour
 {
     public Animator Animator;
+    [SerializeField] private AudioSource TextBeep;
 
     public float DelayBeforeEndCall;
 
@@ -45,6 +46,7 @@ public class WalkieTalkieCall : MonoBehaviour
         foreach (char letra in TextToShow)
         {
             TMP.text += letra;
+            if (TextBeep != null) TextBeep.Play();
             yield return new WaitForSeconds(TextSpeed);
         }
     }

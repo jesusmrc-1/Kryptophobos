@@ -15,6 +15,9 @@ public class SlidingDoor : MonoBehaviour
 
     private float _remainingTime;
 
+    [SerializeField] private AudioSource _openDoor;
+    [SerializeField] private AudioSource _closingDoor;
+
     //[SerializeField] private string _ID;
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +26,11 @@ public class SlidingDoor : MonoBehaviour
             other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             _remainingTime = _sensorTimerDelay;
-            if (!_doorLocked) OpenDoor();
+            if (!_doorLocked)
+            {
+                OpenDoor();
+                _openDoor.Play();
+            }
         }
     }
 
@@ -74,6 +81,7 @@ public class SlidingDoor : MonoBehaviour
             if (_remainingTime <= 0f)
             {
                 CloseDoor();
+                _closingDoor.Play();
                 yield break; //Detener corrutina
             }
             yield return null; //Esperar al siguiente frame

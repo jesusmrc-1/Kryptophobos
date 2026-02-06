@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -44,7 +45,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public bool TankControls;
 
-
+    public Action OnPlayerDamage;
 
     public InteractableDistanceChecker IDC;
 
@@ -168,6 +169,7 @@ public class Player : MonoBehaviour, IDamageable
         {
             StopAllCoroutines();
             CurrentHealth = newHealth;
+            OnPlayerDamage?.Invoke();
             GodMode = true;
             StartCoroutine(InvincibleFrames());
         }
