@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6deb527073ca4d84c8b8943e51a1c62a, type: 3}
   m_Name: ES_ComoRepararPCB
   m_EditorClassIdentifier: Assembly-CSharp::NoteData
-  NoteName: PCB
+  NoteName: Instrucciones
   NoteText: "Aqu\xED est\xE1n las resistencias que hacen falta para reparar la PCB
     del ordenador en la sala de control, hay que colocar las resistencias en los
     huecos R-03, R-06, R-11, R-18 y R-24 seg\xFAn el valor de cada resistencia.\n\nPara
     poder calcular el valor de cada resistencia, puedes hacer uso de la tabla de
     colores que hay en la parte posterior de la puerta donde se encuentra la PCB
-    del ordenador."
+    del ordenador.\n\nY recuerda, una vez colocadas las resistencias, manten el boton
+    RESET durante un par de segundos para comprobar si se ha reparado bien la PCB."

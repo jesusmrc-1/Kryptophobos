@@ -113,7 +113,7 @@ public class EventsManager : MonoBehaviour
                 GameManager.Instance.WalkieTalkieCall = WalkieTalkieCall;
                 if (WalkieTalkieCall != null)
                 {
-                    WalkieTalkieCall.Invoke("Call", 3f);
+                    WalkieTalkieCall.Invoke("Call", 2f);
                 }
                 
                 /*

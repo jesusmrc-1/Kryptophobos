@@ -12,12 +12,21 @@ public class AmbienceManager : MonoBehaviour
     private Dictionary<string, AudioClip> clipList;
 
     [SerializeField] private AudioSource mainMenu;
+    [SerializeField] private float mainMenuVolume;
+
     [SerializeField] private AudioSource gameplay;
+    [SerializeField] private float gameplayVolume;
+
     [SerializeField] private AudioSource gameplayTension;
+    [SerializeField] private float gameplayTensionVolume;
+
     [SerializeField] private AudioSource gameplayPersecution;
+    [SerializeField] private float gameplayPersecutionVolume;
 
     public List<Enemy> enemiesSearching;
     public List<Enemy> enemiesFollowing;
+
+    public bool StopPlayingEnemySFX;
 
     private void Awake()
     {
@@ -47,6 +56,15 @@ public class AmbienceManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        mainMenu.volume = mainMenuVolume;
+
+        gameplay.volume = gameplayVolume;
+        gameplayTension.volume = gameplayTensionVolume;
+        gameplayPersecution.volume = gameplayPersecutionVolume;
+    }
+
     private IEnumerator PlayIntroThenLoop(AudioSource source, string intro, string loop)
     {
         if (!clipList.TryGetValue(intro, out AudioClip introClip))
@@ -74,7 +92,7 @@ public class AmbienceManager : MonoBehaviour
     //Enemigo en modo busqueda, el enemigo se añade a la lista de 'enemiesSearching' y luego llama al metodo, si ya hay algun enemigo, entonces no se vuelve a reproducir
     public void TensionSFX(bool playSFX)
     {
-        if(enemiesSearching.Count == 0)
+        if(enemiesSearching.Count == 0 && !StopPlayingEnemySFX)
         {
             if (gameplayTension != null)
             {
@@ -87,7 +105,7 @@ public class AmbienceManager : MonoBehaviour
     //Enemigo persiguiendo al jugador
     public void PersecutionSFX(bool playSFX)
     {
-        if (enemiesFollowing.Count == 0)
+        if (enemiesFollowing.Count == 0 && !StopPlayingEnemySFX)
         {
             if (gameplayPersecution != null)
             {
@@ -95,5 +113,11 @@ public class AmbienceManager : MonoBehaviour
                 else gameplayPersecution.Stop();
             }
         }
+    }
+
+    public void StopEnemySounds()
+    {
+        gameplayTension.Stop();
+        gameplayPersecution.Stop();
     }
 }

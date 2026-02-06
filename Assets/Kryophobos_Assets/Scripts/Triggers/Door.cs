@@ -26,6 +26,7 @@ public class Door : TriggerBase
 
     [SerializeField] private NewUIManager _newUIManager;
 
+    [SerializeField] private AudioSource _audioSource;
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -78,7 +79,7 @@ public class Door : TriggerBase
         _animator.SetTrigger("Open");
         DiegeticText = "";
 
-
+        _audioSource.Play();
 
         //Borrar la llave al abrir la puerta
         ItemStack item = _inventory.Items.Find(itemStack => itemStack.Item == RequiredItem);
@@ -97,7 +98,7 @@ public class Door : TriggerBase
         _player.PlayerHasRequiredItems = false;
 
         //Por ahora se destruye el trigger, si mas adelante hay puertas que puedas interactuar para cerrar ya se cambiara la forma de interactuar.
-        Destroy(gameObject);
+        Destroy(gameObject, _audioSource.clip.length);
     }
 
     [Tooltip("Marca esta casilla si quieres que cuando se abra la puerta se cambie el objetivo.")]
