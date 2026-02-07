@@ -111,11 +111,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: -1, z: 0}
       index: 5
-      probeCount: 1984
+      probeCount: 2048
       minSubdiv: 0
       indexChunkCount: 2
       shChunkCount: 1
-      bricksCount: 31
+      bricksCount: 32
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: -27, z: 0}
         minSubdiv: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: 1810702255
+    - sceneHash: -1006966041
       cellDataAsset:
         m_AssetGUID: a5bf8dc56991f084da525f7f4068146c
         m_StreamableAssetPath: APVStreamingAssets\c927117409750d7428d28ef48b59d142\a5bf8dc56991f084da525f7f4068146c.bytes
@@ -273,10 +273,10 @@ MonoBehaviour:
       - offset: 2528
         elementCount: 51
       - offset: 3344
-        elementCount: 31
-      - offset: 3840
+        elementCount: 32
+      - offset: 3856
         elementCount: 58
-      - offset: 4768
+      - offset: 4784
         elementCount: 39
     m_Asset: {fileID: 0}
   cellSupportDataAsset:
