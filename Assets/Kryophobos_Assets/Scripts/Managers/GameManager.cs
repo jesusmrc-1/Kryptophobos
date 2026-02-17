@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
     public List<string> IDList { get; private set; } = new List<string>();
     public bool PlayerHasFlashlight;
     public WalkieTalkieCall WalkieTalkieCall;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,6 +35,15 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene == "MainMenu")
+        {
+            ClearSavedData();
+        }
     }
 
     public void ClearSavedData()

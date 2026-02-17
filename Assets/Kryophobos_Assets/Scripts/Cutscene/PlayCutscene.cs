@@ -12,6 +12,8 @@ public class PlayCutscene : MonoBehaviour
     [SerializeField] private GameObject _playerFinalPosition;
     [SerializeField] private bool _modifyPlayerPosition;
 
+    [SerializeField] private bool _LoadSceneAfterCutscene;
+
     private void Start()
     {
         _playVideo = GameObject.FindGameObjectWithTag("VideoPlayer").GetComponent<PlayVideo>();
@@ -23,7 +25,12 @@ public class PlayCutscene : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("PlayerLayer"))
         {
-            _playVideo.PlayVideoClip(_clip);
+            if (_LoadSceneAfterCutscene)
+            {
+                _playVideo.PlayVideoAndLoadScene(_clip, "MainMenu", true);
+            }
+            else { _playVideo.PlayVideoClip(_clip); }
+
             if (_modifyPlayerPosition) 
             {
                 other.gameObject.transform.position = _playerFinalPosition.transform.position;
